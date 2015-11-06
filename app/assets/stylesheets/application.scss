@@ -1,0 +1,50 @@
+
+
+ // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "components/carousel";
+
+
+ .fullscreen-bg {
+     position: fixed;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     overflow: hidden;
+     z-index: -100;
+     margin-top: -60px;
+ }
+
+ .fullscreen-bg__video {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 200%;
+     margin-top: -60px;
+ }
+
+ @media (min-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: 100%;
+    height: 150%;
+    margin-top: -60px;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: auto;
+    height:160%;
+    margin-top: -60px;
+  }
+}
+
+
+.shim-top {
+  &.sm {
+    margin-top: 10px;
+  }
+}

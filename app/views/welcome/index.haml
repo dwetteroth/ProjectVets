@@ -1,0 +1,240 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}
+      %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
+        %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+          / The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
+          %meta{:content => "", :name => "description"}
+            %meta{:content => "", :name => "author"}
+              %link{:href => "../../favicon.ico", :rel => "icon"}
+                %title Carousel Template for Bootstrap
+                / Bootstrap core CSS
+                %link{:href => "http://getbootstrap.com/examples/carousel/../../dist/css/bootstrap.min.css", :rel => "stylesheet"}
+                  / Just for debugging purposes. Don't actually copy these 2 lines!
+                  /[if lt IE 9] <script src="../../assets/js/ie8-responsive-file-warning.js"></script>
+                  %script{:src => "http://getbootstrap.com/examples/carousel/../../assets/js/ie-emulation-modes-warning.js"}
+                  / HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+                  /[if lt IE 9]
+                    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+                    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+                  / Custom styles for this template
+
+  /
+    NAVBAR
+    \==================================================
+  %body
+    .navbar-wrapper
+      .container
+        %nav.navbar.navbar-inverse.navbar-static-top
+          .container
+            .navbar-header
+              %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
+                %span.sr-only Toggle navigation
+                %span.icon-bar
+                %span.icon-bar
+                %span.icon-bar
+              -# %a.navbar-brand{:href => "/"} Project Vets
+            #navbar.navbar-collapse.collapse
+              %ul.nav.navbar-nav
+                %li.active
+                  %a{:href => "/"} HOME
+                %li.dropdown
+                  %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                    WHO WE ARE
+                    %span.caret
+                  %ul.dropdown-menu
+                    %li
+                      %a{:href => "/mission"} Mission Statement
+                    %li
+                      %a{:href => "/history"} History
+                    %li
+                      %a{:href => "/board"} Our Board
+                    %li
+                      %a{:href => "/staff"} Our Staff
+                    %li
+                      %a{:href => "/partners"} Strategic Partners
+                    %li
+                      %a{:href => "/donors"} Our Donors
+                    %li
+                      %a{:href => "/reports"} Annual Reports
+                %li.dropdown
+                  %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                    HOW YOU CAN HELP
+                    %span.caret
+                  %ul.dropdown-menu
+                    %li
+                      %a{:href => "/donations"} Monetary Donations
+                    %li
+                      %a{:href => "/donate"} Donate Equipment, Technology, Supplies
+                    %li
+                      %a{:href => "/celebration"} Celebrations &amp; Memorials
+                    %li
+                      %a{:href => "/volunteer"} Volunteer
+                    %li
+                      %a{:href => "/shop"} Shop
+                %li.dropdown
+                  %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                    OUR RECIPIENTS
+                    %span.caret
+                  %ul.dropdown-menu
+                    %li
+                      %a{:href => "/by-name"} By Name
+                    %li
+                      %a{:href => "/world-map"} World Map
+                    %li
+                      %a{:href => "/gallery"} Gallery
+                    %li
+                      %a{:href => "/assistance"} Apply for Assistance
+                %li
+                  %a{:href => "/contact"} CONTACT US
+              .col-sm-5.col-md-4.pull-right
+                %form.navbar-form{:role => "search"}
+                  .input-group
+                    %input#srch-term.form-control{:name => "srch-term", :placeholder => "Search", :type => "text"}
+                      .input-group-btn
+                        %button.btn.btn-default{:type => "submit"}
+                          %i.glyphicon.glyphicon-search
+                  %a.btn.btn-sm.btn-primary{:href => "#", :role => "button"} Donate Now
+    /
+      Carousel
+      \==================================================
+    #myCarousel.carousel.slide{"data-ride" => "carousel"}
+      -# / Indicators
+      -# %ol.carousel-indicators
+      -#   %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
+      -#   %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
+      -#   %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
+      .carousel-inner{:role => "listbox"}
+        .item.active
+          %img.first-slide
+            .container
+              %video.fullscreen-bg__video{:autoplay => "true", :loop => "true", :muted => "true", :poster => "/assets/polarbear.mp4"}
+                %source{:src => "/assets/safari.mp4", :type => "video/webm"}
+                  %source{:src => "/assets/safari.mp4", :type => "video/mp4"}
+              .carousel-caption{style:"text-align:left;"}
+                %h1
+                  Donate
+                %p
+                  %a.btn.btn-lg.btn-primary{:href => "/donate", :role => "button"} Learn more
+              .carousel-caption
+                %h1
+                  Distribute
+                %p
+                  %a.btn.btn-lg.btn-primary{:href => "/distribute", :role => "button"} Learn more
+              .carousel-caption{style:"text-align:right"}
+                %h1
+                  Heal
+                %p
+                  %a.btn.btn-lg.btn-primary{:href => "/heal", :role => "button"} Learn more
+
+    /
+      Marketing messaging and featurettes
+      \==================================================
+    / Wrap the rest of the page in another container to center all the content.
+    .container.marketing
+      / Three columns of text below the carousel
+      .row
+        .col-lg-4
+          %img.img-circle{:alt => "Generic placeholder image", :height => "140", :src => "data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==", :width => "140"}
+            %h2 Facebook
+            %p Facebook Widget here
+            -# %p
+            -#   %a.btn.btn-default{:href => "#", :role => "button"} View details &raquo;
+        / /.col-lg-4
+        .col-lg-4
+          %img{:alt => "Generic placeholder image", :height => "140", :src => "/assets/hp-middle2.png", :width => "220"}
+            %h2 How You Can Help
+            %p Project V.E.T.S. is seeking your donations! We need veterinary/medical equipment and supplies, new or used, in good-to-excellent working condition. For those supplies that carry an expiration date, please contact us prior to shipping to see if we can accept them.
+            %p
+              %a.btn.btn-default{:href => "#", :role => "button"} Learn more &raquo;
+        / /.col-lg-4
+        .col-lg-4
+          %img{:alt => "", :height => "140", :src => "/assets/hp-middle3.jpg", :width => "220"}
+            %h2 Heading
+            %p We are an organization dedicated to helping improve the health and welfare of animals around the globe. We achieve this goal by collecting veterinary equipment, technology and supplies (V.E.T.S.) which we then donate to veterinarians worldwide working in animal related non-profits.
+            %p
+              %a.btn.btn-default{:href => "#", :role => "button"} Learn more &raquo;
+      %hr.featurette-divider
+      .row
+        .col-lg-6.col-sm-12
+          Sign up for our e-newsletter:
+          .row
+            .col-md-6
+              %input{placeholder:"Name", style:"width:100%;"}
+            .col-md-6
+              %input{placeholder:"Email", style:"width:100%;"}
+          .row.shim-top.sm
+            .col-md-12
+              %a.btn.btn-default{:href => "#", :role => "button"} Submit &raquo;
+
+        .col-lg-6.col-sm-12
+          .hp-slides{"data-slick" => "{\"slidesToShow\": 4, \"slidesToScroll\": 4}"}
+            %div
+              %h3 1
+            %div
+              %h3 2
+            %div
+              %h3 3
+            %div
+              %h3 4
+            %div
+              %h3 5
+            %div
+              %h3 6
+        / /.col-lg-4
+      / /.row
+      / START THE FEATURETTES
+      -# %hr.featurette-divider
+      -#   .row.featurette
+      -#     .col-md-7
+      -#       %h2.featurette-heading
+      -#         First featurette heading.
+      -#         %span.text-muted It'll blow your mind.
+      -#       %p.lead Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+      -#     .col-md-5
+      -#       %img.featurette-image.img-responsive.center-block{:alt => "Generic placeholder image", "data-src" => "holder.js/500x500/auto"}
+      -#   %hr.featurette-divider
+      -#     .row.featurette
+      -#       .col-md-7.col-md-push-5
+      -#         %h2.featurette-heading
+      -#           Oh yeah, it's that good.
+      -#           %span.text-muted See for yourself.
+      -#         %p.lead Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+      -#       .col-md-5.col-md-pull-7
+      -#         %img.featurette-image.img-responsive.center-block{:alt => "Generic placeholder image", "data-src" => "holder.js/500x500/auto"}
+      -#     %hr.featurette-divider
+      -#       .row.featurette
+      -#         .col-md-7
+      -#           %h2.featurette-heading
+      -#             And lastly, this one.
+      -#             %span.text-muted Checkmate.
+      -#           %p.lead Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+      -#         .col-md-5
+      -#           %img.featurette-image.img-responsive.center-block{:alt => "Generic placeholder image", "data-src" => "holder.js/500x500/auto"}
+      -#       %hr.featurette-divider
+      -#         / /END THE FEATURETTES
+      -#         / FOOTER
+      -#         %footer
+      -#           %p.pull-right
+      -#             %a{:href => "#"} Back to top
+      -#           %p
+      -#             \&copy; 2014 Company, Inc. &middot;
+      -#             %a{:href => "#"} Privacy
+      -#             \&middot;
+      -#             %a{:href => "#"} Terms
+    / /.container
+    /
+      Bootstrap core JavaScript
+      \==================================================
+    / Placed at the end of the document so the pages load faster
+    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"}
+    %script{:src => "http://getbootstrap.com/examples/carousel/../../dist/js/bootstrap.min.js"}
+    / Just to make our placeholder images work. Don't actually copy the next line!
+    %script{:src => "http://getbootstrap.com/examples/carousel/../../assets/js/vendor/holder.min.js"}
+    / IE10 viewport hack for Surface/desktop Windows 8 bug
+    %script{:src => "http://getbootstrap.com/examples/carousel/../../assets/js/ie10-viewport-bug-workaround.js"}
+:javascript
+  $(function() {
+    $('.hp-slides').slick();
+  });
