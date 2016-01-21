@@ -6,6 +6,16 @@
  @import "components/carousel";
 
 
+
+
+ .callout {
+     //width:100%;
+    //  background-color: transparent;
+     min-height:530px;
+     border: 0px;
+
+ }
+
  .fullscreen-bg {
      position: fixed;
      top: 0;
@@ -34,6 +44,15 @@
   }
 }
 
+
+
+@media (min-width: 1200px) {
+  .container {
+      width: 1300px;
+  }
+}
+
+
 @media (max-aspect-ratio: 16/9) {
   .fullscreen-bg__video {
     width: auto;
@@ -46,5 +65,89 @@
 .shim-top {
   &.sm {
     margin-top: 10px;
+  }
+}
+.main-hp {
+  background-image: url(/assets/slide30-cows.jpg);
+  background-repeat: no-repeat;
+  height:600px !important;
+  overflow: hidden;
+  .callout {
+      //width:100%;
+      background-color: transparent;
+      border: 0px;
+
+
+      min-height:0px;
+      p{
+        background-color:rgba(0,0,0,0.5);
+
+        height:130px;
+        width:100%;
+        color: #fff;
+        padding: 30px;
+        .title{
+          color: #fff;
+        }
+
+        &.lead {
+          font-size: 140% !important;
+          border-bottom: 1px solid #000 !important;
+        }
+      }
+  }
+
+  .secondary {
+    margin-top: 100px;
+    //width: 100%;
+    opacity: .8;
+  }
+
+}
+
+.top-bar {
+  background-color: transparent !important;
+}
+footer {
+  .callout {
+    min-height:0px;
+  }
+}
+
+
+body {
+  background-color: #D0CE9F !important;
+}
+
+.callout {
+  &.newsletter {
+    height:60px !important;
+    min-height:0px;
+  }
+  &.donors {
+    min-height: 0px;
+    height: 200px !important;
+  }
+}
+
+
+.shim-top {
+  margin-top:10px;
+}
+
+.padd-it {
+  margin:20px;
+}
+
+.center-it {
+  text-align: center;
+}
+
+.accord {
+  li {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-size: 11px;
   }
 }

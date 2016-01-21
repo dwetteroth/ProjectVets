@@ -1,0 +1,33 @@
+!!!
+%html
+  %head
+    %title ProjectVets
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag 'foundation', 'data-turbolinks-track' => true
+    %link{:href => "//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "//cdn.jsdelivr.net/jquery.slick/1.5.9/slick-theme.css", :rel => "stylesheet", :type => "text/css"}/
+    = csrf_meta_tags
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title Project Vets
+    
+    %link{:href => "http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css", :rel => "stylesheet"}
+      %link{:href => "http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css", :rel => "stylesheet", :type => "text/css"}
+    :javascript
+      var switchTo5x=true;
+    %script{:src => "http://w.sharethis.com/button/buttons.js", :type => "text/javascript"}
+    :javascript
+      stLight.options({publisher: "4542afba-2f4c-453d-ac8a-b8ebe06a564b", doNotHash: false, doNotCopy: false, hashAddressBar: false});
+  %body
+    = yield
+    %script{:src => "//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js", :type => "text/javascript"}
+    :javascript
+      $(document).ready(function(){
+        $('.donor-slider').slick({
+          infinite:true,
+          arrows: false
+
+        });
+        $('.donor-slider').slick('slickPlay');
+      });

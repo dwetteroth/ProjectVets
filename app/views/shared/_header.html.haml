@@ -1,0 +1,85 @@
+
+
+
+
+.row.large-up-1{style:"max-width:85rem;margin-left:-15px;"}
+  .column
+
+    %nav.navbar.navbar-inverse.navbar-static-top{style:"margin-top:0px;height:60px;min-width:120%;"}
+      .container
+        .navbar-header
+          %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          -# %a.navbar-brand{:href => "/"} Project Vets
+        #navbar.navbar-collapse.collapse
+
+          %ul.nav.navbar-nav
+            %li
+              %img{src:"/assets/logo.png", style:"width:50px;"}
+            %li.active
+              %a{:href => "/"} HOME
+            %li.dropdown
+              %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "/who", :role => "button"}
+                WHO WE ARE
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "/mission"} Mission Statement
+                %li
+                  %a{:href => "/history"} History
+                %li
+                  %a{:href => "/board"} Our Board
+                %li
+                  %a{:href => "/staff"} Our Staff
+                %li
+                  %a{:href => "/partners"} Strategic Partners
+                %li
+                  %a{:href => "/donors"} Our Donors
+                %li
+                  %a{:href => "/reports"} Annual Reports
+            %li.dropdown
+              %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "/help", :role => "button"}
+                HOW YOU CAN HELP
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "/donations"} Monetary Donations
+                %li
+                  %a{:href => "/donate"} Donate Equipment, Technology, Supplies
+                %li
+                  %a{:href => "/celebration"} Celebrations &amp; Memorials
+                %li
+                  %a{:href => "/volunteer"} Volunteer
+                %li
+                  %a{:href => "/shop"} Shop
+            %li.dropdown
+              %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                OUR RECIPIENTS
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "/by-name"} By Name
+                %li
+                  %a{:href => "/world-map"} World Map
+                %li
+                  %a{:href => "/gallery"} Gallery
+                %li
+                  %a{:href => "/assistance"} Apply for Assistance
+            %li
+              %a{:href => "/contact"} CONTACT US
+          .col-sm-5.col-md-4.col-md-4.pull-right
+            .row
+              .col-md-7
+                %form.navbar-form{:role => "search"}
+                  .input-group
+                    %input#srch-term.form-control{:name => "srch-term", :placeholder => "Search", :type => "text", style:"width:200px"}
+              -# .col-md-1
+              -#   .input-group-btn
+              -#     %button.btn.btn-default{:type => "submit"}
+              -#       %i.glyphicon.glyphicon-search
+              .col-md-5
+                %img#imgDonateButton{:alt => "DonateNow", :border => "0", :src => "https://assets.networkforgood.org/dn2buttons/DN2Button-RedLarge.png", style:"width:100%;margin-top:7px;"}/
+              -# %a

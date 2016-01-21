@@ -1,0 +1,99 @@
+=render '/shared/header'
+
+
+#content.row{style:"background-color:#fff;padding:20px;margin-bottom:20px;min-height:600px;"}
+  .medium-8.columns
+    .blog-post
+      %h3{style:"margin-bottom:25px;"}
+        Our Staff
+
+
+      %p
+
+        %h4 Project V.E.T.S. is proud to work with the following corporations:
+        .row.small-up-1.medium-up-2.large-up-2
+          .column
+            %a{:href => "http://apexx-equipment.com", :target => "_blank"}
+              %img{:alt => "apexx-logo-small-transparent", :height => "111", :src => "/assets/apexx-logo-small-transparent.png", :width => "269"}/
+            %h5
+              %a{:href => "http://apexx-equipment.com", :target => "_blank"}
+                %strong Apexx Veterinary Equipment
+          .column
+            %a{:href => "http://www.heska.com", :target => "_blank"}
+              %img{:alt => "spo6", :height => "96", :src => "/assets/spo6.jpg", :width => "290"}/
+            %h5
+              %a{:href => "http://www.heska.com", :target => "_blank"}
+                %strong HESKA
+          .column
+            %a{:href => "http://www.gopetplan.com", :target => "_blank"}
+              %img{:alt => "Petplan web 20090901 29112", :height => "106", :src => "/assets/Petplan%20web_20090901_29112.jpg", :width => "320"}/
+            %h5
+
+              %a{:href => "http://www.gopetplan.com", :target => "_blank"}
+                %strong Petplan pet insurance
+          .column
+            %a{:href => "http://www.psi-inc.net", :target => "_blank"}
+              %img{:alt => "PSI Logo Final6 SM", :height => "96", :src => "/assets/PSI_Logo_Final6_SM.jpg", :width => "290"}/
+            %h5
+              %a{:href => "http://www.psi-inc.net", :target => "_blank"}
+                %strong Purchasing Services Inc.
+          .column
+            %a{:href => "http://www.zoetis.com", :target => "_blank"}
+              %strong
+                %img{:alt => "Zoetis c1", :height => "120", :src => "/assets/Zoetis_c1.JPG", :width => "320"}/
+            %h5
+              %a{:href => "http://www.zoetis.com", :target => "_blank"}
+                %strong Zoetis
+          .column
+            %a{:href => "http://greatnonprofits.org/org/project-v-e-t-s", :target => "_blank"}
+              %strong
+                %img{:alt => "2015 top rated awards badge embed", :height => "110", :src => "/assets/2015-top-rated-awards-badge-embed.png", :width => "220"}/
+            %h5
+
+              %a{:href => "http://greatnonprofits.org/org/project-v-e-t-s", :target => "_blank"} Great Nonprofits
+
+
+  .medium-3.columns.hide-for-small-only{"data-sticky-container" => ""}
+    .sticky{"data-anchor" => "content", "data-sticky" => ""}
+      %ul.accordion{"data-accordion" => "", "data-multi-expand"=>"true"}
+        %li.accordion-item.is-active
+          / The tab title needs role="tab", an href, a unique ID, and aria-controls.
+          %a#panel1d-heading.accordion-title{"aria-controls" => "panel1d", :href => "#panel1d", :role => "tab", style:"font-size:14px;"} How You Can Help
+          / The content pane needs an ID that matches the above href, role="tabpanel", data-tab-content, and aria-labelledby.
+          #panel1d.accordion-content{"aria-labelledby" => "panel1d-heading", "data-tab-content" => "", :role => "tabpanel"}
+            %ul.accord
+              %li
+                %a{:href => "/"}
+                  Monetary Donations
+              %li
+                %a{:href => "/"}
+                  Donate Equipment, Tech, or supplies
+              %li
+                %a{:href => "/"}
+                  Celebrations & memorials
+              %li
+                %a{:href => "/"}
+                  Volunteer
+              %li
+                %a{:href => "/"}
+                  Shop
+
+        %li.accordion-item
+          / The tab title needs role="tab", an href, a unique ID, and aria-controls.
+          %a#panel1d-heading.accordion-title{"aria-controls" => "panel1d", :href => "#panel1d", :role => "tab", style:"font-size:14px;"} Sign up for our e-newsletter
+          / The content pane needs an ID that matches the above href, role="tabpanel", data-tab-content, and aria-labelledby.
+          #panel1d.accordion-content{"aria-labelledby" => "panel1d-heading", "data-tab-content" => "", :role => "tabpanel"}
+            %form
+              %input{:placeholder=>"Name"}
+              %br
+              %input{:placeholder=>"Email"}
+              %br
+              %a.btn.btn-default{:href => "#", :role => "button"} Submit
+
+
+
+
+
+
+
+=render '/shared/footer'
