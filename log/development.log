@@ -50239,3 +50239,4294 @@ Started GET "/assets/petplan.jpg" for ::1 at 2016-01-20 23:09:39 -0700
 
 
 Started GET "/assets/footer_logo.png" for ::1 at 2016-01-20 23:09:39 -0700
+  [1m[36m (27.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (2.2ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CaseinCreateAdminUsers (20160120195527)
+  [1m[35m (0.3ms)[0m  BEGIN
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in up at /development/PV/db/migrate/20160120195527_casein_create_admin_users.rb:22)
+  [1m[36m (7.3ms)[0m  [1mCREATE TABLE "casein_admin_users" ("id" serial primary key, "login" character varying NOT NULL, "name" character varying, "email" character varying, "access_level" integer DEFAULT 0 NOT NULL, "crypted_password" character varying NOT NULL, "password_salt" character varying NOT NULL, "persistence_token" character varying, "single_access_token" character varying, "perishable_token" character varying, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" timestamp, "current_login_at" timestamp, "last_login_at" timestamp, "current_login_ip" character varying, "last_login_ip" character varying, "time_zone" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160120195527"]]
+  [1m[36m (150.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreateHomepages (20160120200506)
+  [1m[35m (0.6ms)[0m  BEGIN
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in up at /development/PV/db/migrate/20160120200506_create_homepages.rb:6)
+  [1m[36m (7.1ms)[0m  [1mCREATE TABLE "homepages" ("id" serial primary key, "title" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160120200506"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateGlobals (20160120200609)
+  [1m[35m (0.4ms)[0m  BEGIN
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in up at /development/PV/db/migrate/20160120200609_create_globals.rb:7)
+  [1m[36m (4.5ms)[0m  [1mCREATE TABLE "globals" ("id" serial primary key, "title" character varying, "keyword" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160120200609"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreatePages (20160120200922)
+  [1m[35m (0.3ms)[0m  BEGIN
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in up at /development/PV/db/migrate/20160120200922_create_pages.rb:7)
+  [1m[36m (7.1ms)[0m  [1mCREATE TABLE "pages" ("id" serial primary key, "header" character varying, "content" character varying, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160120200922"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.6ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (5.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'casein_admin_users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'globals'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (4.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'homepages'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'pages'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/" for ::1 at 2016-01-21 07:23:04 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (9.0ms)
+  Rendered welcome/index.haml within layouts/application (55.6ms)
+Completed 200 OK in 4647ms (Views: 4635.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 07:23:09 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 07:23:09 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 07:23:09 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 07:23:09 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 07:23:10 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 07:23:10 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 07:23:10 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 07:23:10 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 07:23:10 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 07:23:10 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 07:23:10 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 07:23:10 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 07:23:10 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 07:23:10 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 07:23:10 -0700
+
+
+Started GET "/who" for ::1 at 2016-01-21 07:23:33 -0700
+Processing by PageController#who as HTML
+  Rendered shared/_header.html.haml (19.4ms)
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered page/who.html.haml within layouts/application (33.3ms)
+Completed 200 OK in 97ms (Views: 96.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 07:23:33 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 07:23:33 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 09:41:32 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (2.2ms)
+Completed 200 OK in 58ms (Views: 57.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 09:41:32 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 09:41:32 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 09:41:33 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 09:41:33 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 09:41:33 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 09:41:33 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 09:41:33 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 09:41:33 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 09:41:33 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 09:41:33 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 09:41:33 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 09:47:07 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:13:59 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (3.2ms)
+Completed 200 OK in 65ms (Views: 64.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:13:59 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:13:59 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:13:59 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:13:59 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:13:59 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:13:59 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:13:59 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:13:59 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:13:59 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:13:59 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:13:59 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:13:59 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:13:59 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:14:00 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:18:21 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (24.0ms)
+Completed 200 OK in 81ms (Views: 80.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:18:21 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:18:21 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:18:21 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:18:21 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:18:21 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:18:21 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:18:21 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:18:21 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:18:21 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:18:21 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:18:21 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:18:21 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:18:22 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:18:22 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:19:00 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.5ms)
+  Rendered welcome/index.haml within layouts/application (32.4ms)
+Completed 200 OK in 123ms (Views: 122.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:19:00 -0700
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:19:00 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:19:00 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:19:00 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:19:01 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:19:01 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:19:01 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:19:01 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:19:01 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:19:01 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:19:01 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:19:01 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:19:01 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:19:01 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:21:55 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.5ms)
+  Rendered welcome/index.haml within layouts/application (29.2ms)
+Completed 200 OK in 94ms (Views: 92.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:21:56 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:21:56 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:21:56 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:21:56 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:21:56 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:21:56 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:21:56 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:21:56 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:21:56 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:21:56 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:21:56 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:21:56 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:21:56 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:21:56 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:22:00 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.5ms)
+  Rendered welcome/index.haml within layouts/application (2.9ms)
+Completed 200 OK in 60ms (Views: 59.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:22:00 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:22:00 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:22:00 -0700
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:22:00 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:22:00 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:22:00 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:22:01 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:22:01 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:22:01 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:22:01 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:22:01 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:22:01 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:22:01 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:22:01 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:22:12 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (32.5ms)
+Completed 200 OK in 93ms (Views: 92.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:22:13 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:22:13 -0700
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:22:13 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:22:13 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:22:13 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:22:13 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:22:13 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:22:13 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:22:13 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:22:13 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:22:13 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:22:13 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:22:13 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:22:13 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:22:13 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:22:22 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (27.2ms)
+Completed 200 OK in 84ms (Views: 83.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:22:22 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:22:22 -0700
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:22:22 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:22:22 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:22:22 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:22:22 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:22:22 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:22:22 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:22:22 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:22:22 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:22:22 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:22:22 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:22:22 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:22:23 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:22:23 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:23:35 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.5ms)
+  Rendered welcome/index.haml within layouts/application (37.6ms)
+Completed 200 OK in 125ms (Views: 124.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:23:36 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:23:36 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:23:36 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:23:36 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:23:36 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:23:36 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:23:36 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:23:36 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:23:36 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:23:36 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:23:36 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:23:36 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:23:36 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:23:37 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:23:41 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (26.4ms)
+Completed 200 OK in 84ms (Views: 82.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:23:41 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:23:41 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:23:42 -0700
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:23:42 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:23:42 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:23:42 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:23:42 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:23:42 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:23:42 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:23:42 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:23:42 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:23:42 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:23:42 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:23:42 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:23:46 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.6ms)
+  Rendered welcome/index.haml within layouts/application (26.6ms)
+Completed 200 OK in 86ms (Views: 84.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:23:46 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:23:46 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:23:46 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:23:46 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:23:46 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:23:46 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:23:46 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:23:46 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:23:47 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:23:47 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:23:47 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:23:47 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:23:47 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:23:47 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:23:54 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (24.8ms)
+Completed 200 OK in 86ms (Views: 85.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:23:54 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:23:54 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:23:54 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:23:55 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:23:55 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:23:55 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:23:55 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:23:55 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:23:55 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:23:55 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:23:55 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:23:55 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:23:55 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:23:55 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:23:55 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:24:01 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (24.9ms)
+Completed 200 OK in 84ms (Views: 82.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:24:01 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:24:01 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:24:01 -0700
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:24:01 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:24:01 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:24:02 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:24:02 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:24:02 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:24:02 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:24:02 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:24:02 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:24:02 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:24:02 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:24:02 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:24:02 -0700
+
+
+Started GET "/contact" for ::1 at 2016-01-21 10:24:11 -0700
+Processing by PageController#contact as HTML
+  Rendered shared/_header.html.haml (0.4ms)
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered page/contact.html.haml within layouts/application (22.4ms)
+Completed 200 OK in 82ms (Views: 81.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:24:12 -0700
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:24:12 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:24:12 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:24:12 -0700
+
+
+Started GET "/index.php/component/rsform/?task=captcha&amp;componentId=41&amp;tmpl=component&amp;sid=560383254" for ::1 at 2016-01-21 10:24:12 -0700
+
+ActionController::RoutingError (No route matches [GET] "/index.php/component/rsform"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  request_store (1.3.0) lib/request_store/middleware.rb:9:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/dwetteroth/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/dwetteroth/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/dwetteroth/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.7ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (96.7ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (233.2ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (105.2ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (217.3ms)
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:24:12 -0700
+
+
+Started GET "/casein" for ::1 at 2016-01-21 10:24:23 -0700
+Processing by Casein::CaseinController#index as HTML
+Redirected to http://localhost:3001/casein/admin_user_session/new
+Filter chain halted as :authorise rendered or redirected
+Completed 302 Found in 103ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/casein/admin_user_session/new" for ::1 at 2016-01-21 10:24:23 -0700
+Processing by Casein::AdminUserSessionsController#new as HTML
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/casein-5.1.1.5/app/views/casein/admin_user_sessions/new.html.erb within layouts/casein_auth (6.9ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/casein-5.1.1.5/app/assets/stylesheets/casein/casein-bootstrap-overrides.css.scss to /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/casein-5.1.1.5/app/assets/stylesheets/casein/casein-bootstrap-overrides.scss. (called from realtime at /Users/dwetteroth/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/benchmark.rb:303)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/casein-5.1.1.5/app/assets/stylesheets/casein/casein-bootstrap-overrides.css.scss to /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/casein-5.1.1.5/app/assets/stylesheets/casein/casein-bootstrap-overrides.scss. (called from realtime at /Users/dwetteroth/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/benchmark.rb:303)
+Completed 200 OK in 2802ms (Views: 2800.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-21 10:24:26 -0700
+
+
+Started GET "/assets/casein/login.self-a8debe6a26755eb7b46b7c68340b70031d5c02f1907b5e2941b6e00ed3c11089.css?body=1" for ::1 at 2016-01-21 10:24:26 -0700
+
+
+Started GET "/assets/casein/casein-da98950e65d5a2d09b5702055eb041ffe9fb3a4424c08b065e9fb62ce313dcd9.png" for ::1 at 2016-01-21 10:24:26 -0700
+
+
+Started GET "/assets/bootstrap.self-e5f04e1a4d121273a314196210515f27b377d2d34a7e56e9348a0170962b72c4.js?body=1" for ::1 at 2016-01-21 10:24:26 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-21 10:24:26 -0700
+
+
+Started GET "/assets/casein/casein.self-b2f4c2f682f5dc20e8dc1e1af3930fa41f1796cb897c5f3d9788d6445d8efa86.js?body=1" for ::1 at 2016-01-21 10:24:26 -0700
+
+
+Started POST "/casein/admin_user_session" for ::1 at 2016-01-21 10:24:34 -0700
+Processing by Casein::AdminUserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q7MwV9HDdxUIJUnkCENib44wRTxzqIMS5HZCfTl5XiI6y8GOvpMBq8aUctcePnJ6MuJ3aiFBo1hxlTSvr9VP0w==", "casein_admin_user_session"=>{"login"=>"admin", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mCasein::AdminUser Load (5.3ms)[0m  SELECT  "casein_admin_users".* FROM "casein_admin_users" WHERE LOWER("casein_admin_users"."login") = LOWER('admin')  ORDER BY "casein_admin_users"."id" ASC LIMIT 1
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/casein-5.1.1.5/app/views/casein/admin_user_sessions/new.html.erb within layouts/casein_auth (2.2ms)
+Completed 200 OK in 97ms (Views: 82.5ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-21 10:24:34 -0700
+
+
+Started GET "/assets/casein/login.self-a8debe6a26755eb7b46b7c68340b70031d5c02f1907b5e2941b6e00ed3c11089.css?body=1" for ::1 at 2016-01-21 10:24:34 -0700
+
+
+Started GET "/assets/casein/casein.self-b2f4c2f682f5dc20e8dc1e1af3930fa41f1796cb897c5f3d9788d6445d8efa86.js?body=1" for ::1 at 2016-01-21 10:24:35 -0700
+
+
+Started GET "/assets/bootstrap.self-e5f04e1a4d121273a314196210515f27b377d2d34a7e56e9348a0170962b72c4.js?body=1" for ::1 at 2016-01-21 10:24:35 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-21 10:24:35 -0700
+
+
+Started GET "/assets/casein/casein-da98950e65d5a2d09b5702055eb041ffe9fb3a4424c08b065e9fb62ce313dcd9.png" for ::1 at 2016-01-21 10:24:35 -0700
+
+
+Started POST "/casein/admin_user_session" for ::1 at 2016-01-21 10:24:38 -0700
+Processing by Casein::AdminUserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vFUjcnAOsA/CSQWjJolGtBLhXHRsieHzfZ1kO9LT+7PFLdKrH17GsQz4PpAw9FahrjNuIj5gwbnofhLpRH/qQg==", "casein_admin_user_session"=>{"login"=>"admin", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mCasein::AdminUser Load (1.1ms)[0m  [1mSELECT  "casein_admin_users".* FROM "casein_admin_users" WHERE LOWER("casein_admin_users"."login") = LOWER('admin')  ORDER BY "casein_admin_users"."id" ASC LIMIT 1[0m
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/casein-5.1.1.5/app/views/casein/admin_user_sessions/new.html.erb within layouts/casein_auth (1.7ms)
+Completed 200 OK in 90ms (Views: 85.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-21 10:24:38 -0700
+
+
+Started GET "/assets/casein/login.self-a8debe6a26755eb7b46b7c68340b70031d5c02f1907b5e2941b6e00ed3c11089.css?body=1" for ::1 at 2016-01-21 10:24:38 -0700
+
+
+Started GET "/assets/bootstrap.self-e5f04e1a4d121273a314196210515f27b377d2d34a7e56e9348a0170962b72c4.js?body=1" for ::1 at 2016-01-21 10:24:39 -0700
+
+
+Started GET "/assets/casein/casein-da98950e65d5a2d09b5702055eb041ffe9fb3a4424c08b065e9fb62ce313dcd9.png" for ::1 at 2016-01-21 10:24:39 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-21 10:24:39 -0700
+
+
+Started GET "/assets/casein/casein.self-b2f4c2f682f5dc20e8dc1e1af3930fa41f1796cb897c5f3d9788d6445d8efa86.js?body=1" for ::1 at 2016-01-21 10:24:39 -0700
+
+
+Started POST "/casein/admin_user_session" for ::1 at 2016-01-21 10:24:44 -0700
+Processing by Casein::AdminUserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cwvnii7lcX7b/LnQfFkdccNDB7e21cB8auYOwOpcwqEKcxZTQbUHwBVNguNqJA1kf5E14eQ84Db/BXgSfPDTUA==", "casein_admin_user_session"=>{"login"=>"danielcw@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mCasein::AdminUser Load (0.7ms)[0m  SELECT  "casein_admin_users".* FROM "casein_admin_users" WHERE LOWER("casein_admin_users"."login") = LOWER('danielcw@gmail.com')  ORDER BY "casein_admin_users"."id" ASC LIMIT 1
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/casein-5.1.1.5/app/views/casein/admin_user_sessions/new.html.erb within layouts/casein_auth (1.7ms)
+Completed 200 OK in 94ms (Views: 90.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/casein/login.self-a8debe6a26755eb7b46b7c68340b70031d5c02f1907b5e2941b6e00ed3c11089.css?body=1" for ::1 at 2016-01-21 10:24:45 -0700
+
+
+Started GET "/assets/casein/casein.self-b2f4c2f682f5dc20e8dc1e1af3930fa41f1796cb897c5f3d9788d6445d8efa86.js?body=1" for ::1 at 2016-01-21 10:24:45 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-21 10:24:45 -0700
+
+
+Started GET "/assets/bootstrap.self-e5f04e1a4d121273a314196210515f27b377d2d34a7e56e9348a0170962b72c4.js?body=1" for ::1 at 2016-01-21 10:24:45 -0700
+
+
+Started GET "/assets/casein/casein-da98950e65d5a2d09b5702055eb041ffe9fb3a4424c08b065e9fb62ce313dcd9.png" for ::1 at 2016-01-21 10:24:45 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-21 10:24:45 -0700
+
+
+Started POST "/casein/admin_user_session" for ::1 at 2016-01-21 10:24:49 -0700
+Processing by Casein::AdminUserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cOndSdzTw2E5uQoaTrBykmyCVKO+mdkzH6kbn1b8nsMJkSyQs4O13/cIMSlYzWKH0FBm9exw+XmKSm1NwFCPMg==", "casein_admin_user_session"=>{"login"=>"danielcw@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mCasein::AdminUser Load (1.1ms)[0m  [1mSELECT  "casein_admin_users".* FROM "casein_admin_users" WHERE LOWER("casein_admin_users"."login") = LOWER('danielcw@gmail.com')  ORDER BY "casein_admin_users"."id" ASC LIMIT 1[0m
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/casein-5.1.1.5/app/views/casein/admin_user_sessions/new.html.erb within layouts/casein_auth (1.6ms)
+Completed 200 OK in 91ms (Views: 85.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/casein/login.self-a8debe6a26755eb7b46b7c68340b70031d5c02f1907b5e2941b6e00ed3c11089.css?body=1" for ::1 at 2016-01-21 10:24:49 -0700
+
+
+Started GET "/assets/bootstrap.self-e5f04e1a4d121273a314196210515f27b377d2d34a7e56e9348a0170962b72c4.js?body=1" for ::1 at 2016-01-21 10:24:49 -0700
+
+
+Started GET "/assets/casein/casein.self-b2f4c2f682f5dc20e8dc1e1af3930fa41f1796cb897c5f3d9788d6445d8efa86.js?body=1" for ::1 at 2016-01-21 10:24:49 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-21 10:24:49 -0700
+
+
+Started GET "/assets/casein/casein-da98950e65d5a2d09b5702055eb041ffe9fb3a4424c08b065e9fb62ce313dcd9.png" for ::1 at 2016-01-21 10:24:49 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-21 10:24:49 -0700
+
+
+Started POST "/casein/admin_user_session" for ::1 at 2016-01-21 10:24:55 -0700
+Processing by Casein::AdminUserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cwvnii7lcX7b/LnQfFkdccNDB7e21cB8auYOwOpcwqEKcxZTQbUHwBVNguNqJA1kf5E14eQ84Db/BXgSfPDTUA==", "casein_admin_user_session"=>{"login"=>"danielcw@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mCasein::AdminUser Load (0.8ms)[0m  SELECT  "casein_admin_users".* FROM "casein_admin_users" WHERE LOWER("casein_admin_users"."login") = LOWER('danielcw@gmail.com')  ORDER BY "casein_admin_users"."id" ASC LIMIT 1
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/casein-5.1.1.5/app/views/casein/admin_user_sessions/new.html.erb within layouts/casein_auth (1.5ms)
+Completed 200 OK in 89ms (Views: 85.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/casein/login.self-a8debe6a26755eb7b46b7c68340b70031d5c02f1907b5e2941b6e00ed3c11089.css?body=1" for ::1 at 2016-01-21 10:24:55 -0700
+
+
+Started GET "/assets/bootstrap.self-e5f04e1a4d121273a314196210515f27b377d2d34a7e56e9348a0170962b72c4.js?body=1" for ::1 at 2016-01-21 10:24:55 -0700
+
+
+Started GET "/assets/casein/casein-da98950e65d5a2d09b5702055eb041ffe9fb3a4424c08b065e9fb62ce313dcd9.png" for ::1 at 2016-01-21 10:24:55 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-21 10:24:55 -0700
+
+
+Started GET "/assets/casein/casein.self-b2f4c2f682f5dc20e8dc1e1af3930fa41f1796cb897c5f3d9788d6445d8efa86.js?body=1" for ::1 at 2016-01-21 10:24:55 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-21 10:24:55 -0700
+
+
+Started POST "/casein/password_reset" for ::1 at 2016-01-21 10:25:06 -0700
+Processing by Casein::PasswordResetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NNnbTF0dW919I/f2+301EfeXxYJ1P/Dvqf2j6IvvAO5NoSqVMk0tY7OSzMXtACUES0X31CfW0KU8HtU6HUMRHw==", "recover_email"=>"danielcw@gmail.com", "commit"=>"Reset password"}
+  [1m[36mCasein::AdminUser Load (0.6ms)[0m  [1mSELECT "casein_admin_users".* FROM "casein_admin_users" WHERE "casein_admin_users"."email" = $1[0m  [["email", "danielcw@gmail.com"]]
+Redirected to http://localhost:3001/casein/admin_user_session/new
+Completed 302 Found in 15ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/casein/admin_user_session/new" for ::1 at 2016-01-21 10:25:06 -0700
+Processing by Casein::AdminUserSessionsController#new as HTML
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/casein-5.1.1.5/app/views/casein/admin_user_sessions/new.html.erb within layouts/casein_auth (2.0ms)
+Completed 200 OK in 102ms (Views: 100.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/casein/login.self-a8debe6a26755eb7b46b7c68340b70031d5c02f1907b5e2941b6e00ed3c11089.css?body=1" for ::1 at 2016-01-21 10:25:06 -0700
+
+
+Started GET "/assets/casein/casein.self-b2f4c2f682f5dc20e8dc1e1af3930fa41f1796cb897c5f3d9788d6445d8efa86.js?body=1" for ::1 at 2016-01-21 10:25:06 -0700
+
+
+Started GET "/assets/bootstrap.self-e5f04e1a4d121273a314196210515f27b377d2d34a7e56e9348a0170962b72c4.js?body=1" for ::1 at 2016-01-21 10:25:06 -0700
+
+
+Started GET "/assets/casein/casein-da98950e65d5a2d09b5702055eb041ffe9fb3a4424c08b065e9fb62ce313dcd9.png" for ::1 at 2016-01-21 10:25:06 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-21 10:25:06 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-21 10:25:06 -0700
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mCasein::AdminUser Exists (1.3ms)[0m  SELECT  1 AS one FROM "casein_admin_users" WHERE LOWER("casein_admin_users"."login") = LOWER('admin') LIMIT 1
+  [1m[36mCasein::AdminUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "casein_admin_users" WHERE "casein_admin_users"."persistence_token" = '7c82bb464004fd5e3d36b69990772c3cac295ae6fec1c8a5f522b4515f5833f3418fc7b165ac9b3be312ab5e85b282c8afaa40ba4f419bae30cdbbca953948af' LIMIT 1[0m
+  [1m[35mCasein::AdminUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "casein_admin_users" WHERE "casein_admin_users"."single_access_token" = 'pTigfdYvOdTdkCOWchE3' LIMIT 1
+  [1m[36mCasein::AdminUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "casein_admin_users" WHERE "casein_admin_users"."login" = 'admin' LIMIT 1[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "casein_admin_users" ("login", "name", "email", "password_salt", "crypted_password", "persistence_token", "single_access_token", "time_zone", "perishable_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"  [["login", "admin"], ["name", "Admin"], ["email", "danielcw@gmail.com"], ["password_salt", "x8rXJDnW8Ks403xG3AVH"], ["crypted_password", "400$8$35$0f0f927584a19d63$cc7904bff338571e37d623bf38135ad1e6914582b1e35586320061fe1d724648"], ["persistence_token", "7c82bb464004fd5e3d36b69990772c3cac295ae6fec1c8a5f522b4515f5833f3418fc7b165ac9b3be312ab5e85b282c8afaa40ba4f419bae30cdbbca953948af"], ["single_access_token", "pTigfdYvOdTdkCOWchE3"], ["time_zone", "UTC"], ["perishable_token", "9luLcFzrYK3mYSURwCs"], ["created_at", "2016-01-21 17:26:39.793938"], ["updated_at", "2016-01-21 17:26:39.793938"]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from call at /Users/dwetteroth/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/rake/task.rb:240)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/casein-5.1.1.5/app/views/casein/casein_notification/new_user_information.erb (2.3ms)
+
+Casein::CaseinNotification#new_user_information: processed outbound mail in 337.6ms
+
+Sent mail to danielcw@gmail.com (11.1ms)
+Date: Thu, 21 Jan 2016 10:26:40 -0700
+From: donotreply@caseincms.com
+To: danielcw@gmail.com
+Message-ID: <56a114d025010_37d23ff4658601fc608d9@Daniels-MacBook-Pro-2.local.mail>
+Subject: [Casein] New user account
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Dear Admin,<br />
+<br />
+A new user account has been created for you at:<br />
+<br />
+http://0.0.0.0:3000/casein<br />
+<br />
+Username: admin<br />
+Password: ltjmp6<br />
+<br />
+From<br />
+<br />
+Casein
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/casein" for ::1 at 2016-01-21 10:29:02 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Casein::CaseinController#index as HTML
+Redirected to http://localhost:3000/casein/admin_user_session/new
+Filter chain halted as :authorise rendered or redirected
+Completed 302 Found in 99ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/casein/admin_user_session/new" for ::1 at 2016-01-21 10:29:03 -0700
+Processing by Casein::AdminUserSessionsController#new as HTML
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/casein-5.1.1.5/app/views/casein/admin_user_sessions/new.html.erb within layouts/casein_auth (11.4ms)
+Completed 200 OK in 461ms (Views: 459.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/casein/login.self-a8debe6a26755eb7b46b7c68340b70031d5c02f1907b5e2941b6e00ed3c11089.css?body=1" for ::1 at 2016-01-21 10:29:03 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-21 10:29:03 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-21 10:29:03 -0700
+
+
+Started GET "/assets/bootstrap.self-e5f04e1a4d121273a314196210515f27b377d2d34a7e56e9348a0170962b72c4.js?body=1" for ::1 at 2016-01-21 10:29:03 -0700
+
+
+Started GET "/assets/casein/casein.self-b2f4c2f682f5dc20e8dc1e1af3930fa41f1796cb897c5f3d9788d6445d8efa86.js?body=1" for ::1 at 2016-01-21 10:29:03 -0700
+
+
+Started GET "/assets/casein/casein-da98950e65d5a2d09b5702055eb041ffe9fb3a4424c08b065e9fb62ce313dcd9.png" for ::1 at 2016-01-21 10:29:03 -0700
+
+
+Started POST "/casein/admin_user_session" for ::1 at 2016-01-21 10:29:10 -0700
+Processing by Casein::AdminUserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bibSQitwqhYkQw7SLAKwatbJXLIjrt/CbRzILJyg3s4XXiObRCDcqOryNeE6f6B/ahtu5HFH/4j4/77+CgzPPw==", "casein_admin_user_session"=>{"login"=>"admin", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mCasein::AdminUser Load (2.0ms)[0m  SELECT  "casein_admin_users".* FROM "casein_admin_users" WHERE LOWER("casein_admin_users"."login") = LOWER('admin')  ORDER BY "casein_admin_users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "casein_admin_users" SET "login_count" = $1, "current_login_at" = $2, "current_login_ip" = $3, "last_request_at" = $4, "perishable_token" = $5, "updated_at" = $6 WHERE "casein_admin_users"."id" = $7  [["login_count", 1], ["current_login_at", "2016-01-21 17:29:11.032638"], ["current_login_ip", "::1"], ["last_request_at", "2016-01-21 17:29:11.032921"], ["perishable_token", "0KhnWBL7H4y1vM4VuU5p"], ["updated_at", "2016-01-21 17:29:11.035312"], ["id", 1]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/casein
+Completed 302 Found in 170ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/casein" for ::1 at 2016-01-21 10:29:11 -0700
+Processing by Casein::CaseinController#index as HTML
+  [1m[35mCasein::AdminUser Load (0.5ms)[0m  SELECT  "casein_admin_users".* FROM "casein_admin_users" WHERE "casein_admin_users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "casein_admin_users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "casein_admin_users"."id" = $4  [["last_request_at", "2016-01-21 17:29:11.066684"], ["perishable_token", "5PQea60ymWff5iS0Pfss"], ["updated_at", "2016-01-21 17:29:11.067631"], ["id", 1]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/casein/blank
+Completed 302 Found in 13ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/casein/blank" for ::1 at 2016-01-21 10:29:11 -0700
+Processing by Casein::CaseinController#blank as HTML
+  [1m[35mCasein::AdminUser Load (0.7ms)[0m  SELECT  "casein_admin_users".* FROM "casein_admin_users" WHERE "casein_admin_users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "casein_admin_users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "casein_admin_users"."id" = $4  [["last_request_at", "2016-01-21 17:29:11.101274"], ["perishable_token", "iRGDmfB737etcPDxada"], ["updated_at", "2016-01-21 17:29:11.103376"], ["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/casein-5.1.1.5/app/views/casein/casein/blank.html.erb within layouts/casein_main (1.6ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/casein-5.1.1.5/app/assets/stylesheets/casein/casein-bootstrap-overrides.css.scss to /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/casein-5.1.1.5/app/assets/stylesheets/casein/casein-bootstrap-overrides.scss. (called from realtime at /Users/dwetteroth/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/benchmark.rb:303)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/casein-5.1.1.5/app/assets/stylesheets/casein/casein-bootstrap-overrides.css.scss to /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/casein-5.1.1.5/app/assets/stylesheets/casein/casein-bootstrap-overrides.scss. (called from realtime at /Users/dwetteroth/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/benchmark.rb:303)
+  Rendered casein/layouts/_top_navigation.html.erb (0.7ms)
+  Rendered casein/layouts/_tab_navigation.html.erb (0.8ms)
+Completed 200 OK in 2553ms (Views: 2539.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/casein/casein.self-43bccb23e2e22b2b73a405406888e2ecb1b03a8304b5210d4165e40f9b19499b.css?body=1" for ::1 at 2016-01-21 10:29:13 -0700
+
+
+Started GET "/assets/casein/casein.self-b2f4c2f682f5dc20e8dc1e1af3930fa41f1796cb897c5f3d9788d6445d8efa86.js?body=1" for ::1 at 2016-01-21 10:29:13 -0700
+
+
+Started GET "/assets/casein/custom.self-552318e16d76c33689d60be9fe1bb40aefeefa33895ee72dd2f19bc37a8ed7d1.css?body=1" for ::1 at 2016-01-21 10:29:13 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-21 10:29:13 -0700
+
+
+Started GET "/assets/bootstrap.self-e5f04e1a4d121273a314196210515f27b377d2d34a7e56e9348a0170962b72c4.js?body=1" for ::1 at 2016-01-21 10:29:13 -0700
+
+
+Started GET "/assets/casein/custom.self-efeca08c6fe59142430d3b3b43032a45acd8c04e4db78c3d3d556f19097d9086.js?body=1" for ::1 at 2016-01-21 10:29:13 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-21 10:29:13 -0700
+
+
+Started GET "/assets/casein/casein-da98950e65d5a2d09b5702055eb041ffe9fb3a4424c08b065e9fb62ce313dcd9.png" for ::1 at 2016-01-21 10:29:13 -0700
+
+
+Started GET "/casein/pages" for ::1 at 2016-01-21 10:30:12 -0700
+Processing by Casein::PagesController#index as HTML
+  [1m[35mCasein::AdminUser Load (0.6ms)[0m  SELECT  "casein_admin_users".* FROM "casein_admin_users" WHERE "casein_admin_users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "casein_admin_users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "casein_admin_users"."id" = $4  [["last_request_at", "2016-01-21 17:30:12.557234"], ["perishable_token", "Bg6zF5jBElULcIz2jm6F"], ["updated_at", "2016-01-21 17:30:12.557991"], ["id", 1]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.1ms)[0m  SELECT COUNT(*) FROM "pages"
+  [1m[36mPage Load (1.0ms)[0m  [1mSELECT  "pages".* FROM "pages"  ORDER BY header   LIMIT 30 OFFSET 0[0m
+  Rendered casein/pages/_table.html.erb (4.8ms)
+  Rendered casein/pages/index.html.erb within layouts/casein_main (13.2ms)
+  Rendered casein/layouts/_top_navigation.html.erb (0.1ms)
+  Rendered casein/layouts/_tab_navigation.html.erb (0.2ms)
+Completed 200 OK in 128ms (Views: 111.5ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/assets/casein/casein.self-43bccb23e2e22b2b73a405406888e2ecb1b03a8304b5210d4165e40f9b19499b.css?body=1" for ::1 at 2016-01-21 10:30:12 -0700
+
+
+Started GET "/assets/bootstrap.self-e5f04e1a4d121273a314196210515f27b377d2d34a7e56e9348a0170962b72c4.js?body=1" for ::1 at 2016-01-21 10:30:12 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-21 10:30:12 -0700
+
+
+Started GET "/assets/casein/casein.self-b2f4c2f682f5dc20e8dc1e1af3930fa41f1796cb897c5f3d9788d6445d8efa86.js?body=1" for ::1 at 2016-01-21 10:30:12 -0700
+
+
+Started GET "/assets/casein/custom.self-efeca08c6fe59142430d3b3b43032a45acd8c04e4db78c3d3d556f19097d9086.js?body=1" for ::1 at 2016-01-21 10:30:12 -0700
+
+
+Started GET "/assets/casein/custom.self-552318e16d76c33689d60be9fe1bb40aefeefa33895ee72dd2f19bc37a8ed7d1.css?body=1" for ::1 at 2016-01-21 10:30:12 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-21 10:30:12 -0700
+
+
+Started GET "/assets/casein/casein-da98950e65d5a2d09b5702055eb041ffe9fb3a4424c08b065e9fb62ce313dcd9.png" for ::1 at 2016-01-21 10:30:12 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for ::1 at 2016-01-21 10:30:13 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:37:52 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (15.3ms)
+  Rendered welcome/index.haml within layouts/application (53.2ms)
+Completed 200 OK in 180ms (Views: 178.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:37:53 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:37:53 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:37:53 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:37:53 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:37:53 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:37:53 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:37:53 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:37:53 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:37:53 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:37:53 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:37:53 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:37:53 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:37:53 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:37:53 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:43:27 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:43:33 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.4ms)
+  Rendered welcome/index.haml within layouts/application (25.2ms)
+Completed 200 OK in 83ms (Views: 82.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:43:33 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:43:33 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:43:33 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:43:33 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:43:33 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:43:33 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:43:33 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:43:33 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:43:33 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:43:33 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:43:33 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:43:33 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 10:43:34 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:43:34 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:43:34 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:43:34 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:43:46 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.4ms)
+  Rendered welcome/index.haml within layouts/application (33.2ms)
+Completed 200 OK in 105ms (Views: 103.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:43:46 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:43:46 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:43:46 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:43:46 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:43:46 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:43:46 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:43:46 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:43:46 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:43:46 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:43:46 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:43:46 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:43:46 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 10:43:46 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:43:46 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:43:46 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:43:53 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (27.4ms)
+Completed 200 OK in 106ms (Views: 104.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:43:53 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:43:53 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:43:53 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:43:53 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:43:53 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:43:53 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:43:53 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:43:53 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:43:53 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:43:53 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:43:54 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:43:54 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:43:54 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:43:54 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 10:43:54 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:44:03 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.5ms)
+  Rendered welcome/index.haml within layouts/application (26.9ms)
+Completed 200 OK in 94ms (Views: 93.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:44:03 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:44:03 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:44:03 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:44:03 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:44:03 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:44:03 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:44:03 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:44:03 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:44:03 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:44:03 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:44:03 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 10:44:03 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:44:03 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:44:03 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:44:03 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:44:03 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:44:10 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.3ms)
+  Rendered welcome/index.haml within layouts/application (29.3ms)
+Completed 200 OK in 89ms (Views: 88.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:44:10 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:44:10 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:44:10 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:44:10 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:44:10 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:44:10 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:44:10 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:44:10 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:44:10 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:44:10 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:44:10 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:44:10 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 10:44:11 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:44:11 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:44:11 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:44:11 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:44:47 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.3ms)
+  Rendered welcome/index.haml within layouts/application (26.5ms)
+Completed 200 OK in 82ms (Views: 81.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:44:47 -0700
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:44:47 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:44:47 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:44:47 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:44:48 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:44:48 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:44:48 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:44:48 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:44:48 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:44:48 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:44:48 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 10:44:48 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:44:48 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:44:48 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:44:48 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:44:49 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:44:57 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.3ms)
+  Rendered welcome/index.haml within layouts/application (30.2ms)
+Completed 200 OK in 96ms (Views: 95.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:44:58 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:44:58 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:44:58 -0700
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:44:58 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:44:58 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:44:58 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:44:58 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:44:58 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:44:58 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:44:58 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:44:58 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 10:44:58 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:44:58 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:44:58 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:44:58 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:44:59 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:45:04 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (26.7ms)
+Completed 200 OK in 94ms (Views: 93.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:45:05 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:45:05 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:45:05 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:45:05 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:45:05 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:45:05 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:45:05 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:45:05 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:45:05 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:45:05 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:45:05 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 10:45:05 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:45:05 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:45:05 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:45:05 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:45:21 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.3ms)
+  Rendered welcome/index.haml within layouts/application (27.6ms)
+Completed 200 OK in 87ms (Views: 85.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:45:21 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:45:21 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:45:21 -0700
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:45:21 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:45:21 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:45:21 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:45:21 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:45:21 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:45:21 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:45:21 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:45:21 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 10:45:21 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:45:21 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:45:22 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:45:22 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:45:22 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:45:22 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:45:22 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:45:22 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:45:22 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:45:22 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:45:22 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:45:22 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 10:45:22 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:45:22 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:45:27 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.6ms)
+  Rendered welcome/index.haml within layouts/application (28.6ms)
+Completed 200 OK in 92ms (Views: 90.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:45:27 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:45:27 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:45:27 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:45:27 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:45:27 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:45:27 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:45:27 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:45:27 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:45:27 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:45:27 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:45:27 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 10:45:27 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:45:28 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:45:28 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:45:28 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:46:29 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.3ms)
+  Rendered welcome/index.haml within layouts/application (26.2ms)
+Completed 200 OK in 85ms (Views: 84.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:46:29 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:46:30 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:46:30 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:46:30 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:46:30 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:46:30 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:46:30 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:46:30 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:46:30 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:46:30 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:46:30 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 10:46:30 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:46:30 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:46:30 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:46:31 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:46:31 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:47:14 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.3ms)
+  Rendered welcome/index.haml within layouts/application (31.5ms)
+Completed 200 OK in 96ms (Views: 95.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:47:14 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:47:14 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:47:14 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:47:14 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:47:15 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:47:15 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:47:15 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:47:15 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:47:15 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:47:15 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:47:15 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 10:47:15 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:47:15 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:47:15 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:47:15 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:47:16 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:47:22 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (27.3ms)
+Completed 200 OK in 85ms (Views: 84.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:47:23 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:47:23 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:47:23 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:47:23 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:47:23 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:47:23 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:47:23 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:47:23 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:47:23 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:47:23 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:47:23 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 10:47:23 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:47:23 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:47:23 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:47:23 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:47:24 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:47:35 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.6ms)
+  Rendered welcome/index.haml within layouts/application (27.4ms)
+Completed 200 OK in 87ms (Views: 86.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:47:35 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:47:35 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:47:35 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:47:35 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:47:35 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:47:35 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:47:35 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:47:35 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:47:35 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:47:35 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:47:35 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 10:47:35 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:47:35 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:47:36 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:47:36 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:47:40 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (25.9ms)
+Completed 200 OK in 84ms (Views: 83.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:47:41 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:47:41 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:47:41 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:47:41 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:47:41 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:47:41 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:47:41 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:47:41 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:47:41 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:47:41 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:47:41 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 10:47:41 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:47:41 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:47:41 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:47:41 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:47:46 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (27.2ms)
+Completed 200 OK in 82ms (Views: 81.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:47:46 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:47:46 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:47:46 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:47:46 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:47:46 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:47:46 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:47:46 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:47:46 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:47:46 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:47:46 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:47:46 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 10:47:46 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:47:46 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:47:46 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:47:46 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:48:57 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (24.9ms)
+Completed 200 OK in 84ms (Views: 83.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:48:57 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:48:57 -0700
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:48:57 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:48:57 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:48:57 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:48:57 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:48:57 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:48:57 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:48:57 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:48:57 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:48:57 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 10:48:57 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:48:57 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:48:58 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:48:58 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:49:12 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.3ms)
+  Rendered welcome/index.haml within layouts/application (28.0ms)
+Completed 200 OK in 83ms (Views: 81.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:49:12 -0700
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:49:12 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:49:12 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:49:12 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:49:12 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:49:12 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:49:12 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:49:12 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:49:12 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:49:12 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:49:12 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 10:49:12 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:49:12 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:49:13 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:49:13 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:52:08 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (31.2ms)
+Completed 200 OK in 91ms (Views: 89.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:52:08 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:52:08 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:52:08 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:52:08 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:52:09 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:52:10 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:52:10 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:52:10 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:52:10 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:52:10 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:52:10 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 10:52:10 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-01-21 10:52:10 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:52:10 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:52:10 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:52:10 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:52:11 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:52:17 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (24.6ms)
+Completed 200 OK in 79ms (Views: 78.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:52:17 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:52:17 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:52:17 -0700
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:52:17 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:52:17 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:52:17 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:52:17 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:52:17 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:52:17 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:52:17 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:52:17 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 10:52:17 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-01-21 10:52:17 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:52:18 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:52:18 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:52:18 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 10:53:07 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (30.4ms)
+Completed 200 OK in 89ms (Views: 88.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 10:53:07 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 10:53:07 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 10:53:07 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 10:53:07 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 10:53:08 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 10:53:08 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 10:53:08 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 10:53:08 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 10:53:08 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 10:53:08 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 10:53:08 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 10:53:08 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-01-21 10:53:08 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 10:53:08 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:53:08 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 10:53:08 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 10:58:42 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 11:01:00 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (2.4ms)
+Completed 200 OK in 57ms (Views: 56.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 11:01:01 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 11:01:01 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 11:01:01 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 11:01:01 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 11:01:01 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 11:01:01 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 11:01:01 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 11:01:01 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 11:01:01 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 11:01:01 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 11:01:01 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 11:01:01 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-01-21 11:01:01 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 11:01:01 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 11:01:01 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 11:01:01 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 11:01:02 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 11:06:36 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 12:26:43 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (2.4ms)
+Completed 200 OK in 60ms (Views: 59.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 12:26:43 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 12:26:43 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 12:26:43 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 12:26:43 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 12:26:43 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 12:26:43 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 12:26:43 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 12:26:43 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 12:26:43 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 12:26:43 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-01-21 12:26:43 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 12:26:43 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 12:26:43 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 12:26:43 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 12:26:43 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 12:26:43 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 12:26:43 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 12:26:43 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 12:26:43 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-01-21 12:26:43 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 12:26:43 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 12:26:43 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 12:26:43 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 12:30:06 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.3ms)
+  Rendered welcome/index.haml within layouts/application (2.8ms)
+Completed 200 OK in 66ms (Views: 64.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 12:30:06 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 12:30:06 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 12:30:06 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 12:30:06 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 12:30:06 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 12:30:07 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 12:30:07 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 12:30:07 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 12:30:07 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 12:30:07 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 12:30:07 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 12:30:07 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 12:30:07 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 12:30:07 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 12:30:07 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-01-21 12:30:07 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 12:30:07 -0700
+
+
+Started GET "/casein/pages/new" for ::1 at 2016-01-21 12:31:07 -0700
+Processing by Casein::PagesController#new as HTML
+  [1m[35mCasein::AdminUser Load (1.1ms)[0m  SELECT  "casein_admin_users".* FROM "casein_admin_users" WHERE "casein_admin_users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "casein_admin_users" SET "last_request_at" = $1, "perishable_token" = $2, "updated_at" = $3 WHERE "casein_admin_users"."id" = $4  [["last_request_at", "2016-01-21 19:31:07.520286"], ["perishable_token", "wAuUF6kCAKo3k84HD6"], ["updated_at", "2016-01-21 19:31:07.521376"], ["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  Rendered casein/pages/_form.html.erb (4.4ms)
+  Rendered casein/pages/new.html.erb within layouts/casein_main (8.7ms)
+  Rendered casein/layouts/_top_navigation.html.erb (0.3ms)
+  Rendered casein/layouts/_tab_navigation.html.erb (0.2ms)
+Completed 200 OK in 252ms (Views: 237.1ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/assets/casein/casein.self-43bccb23e2e22b2b73a405406888e2ecb1b03a8304b5210d4165e40f9b19499b.css?body=1" for ::1 at 2016-01-21 12:31:07 -0700
+
+
+Started GET "/assets/casein/custom.self-552318e16d76c33689d60be9fe1bb40aefeefa33895ee72dd2f19bc37a8ed7d1.css?body=1" for ::1 at 2016-01-21 12:31:07 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-21 12:31:07 -0700
+
+
+Started GET "/assets/bootstrap.self-e5f04e1a4d121273a314196210515f27b377d2d34a7e56e9348a0170962b72c4.js?body=1" for ::1 at 2016-01-21 12:31:07 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-21 12:31:07 -0700
+
+
+Started GET "/assets/casein/casein.self-b2f4c2f682f5dc20e8dc1e1af3930fa41f1796cb897c5f3d9788d6445d8efa86.js?body=1" for ::1 at 2016-01-21 12:31:07 -0700
+
+
+Started GET "/assets/casein/custom.self-efeca08c6fe59142430d3b3b43032a45acd8c04e4db78c3d3d556f19097d9086.js?body=1" for ::1 at 2016-01-21 12:31:08 -0700
+
+
+Started GET "/assets/casein/casein-da98950e65d5a2d09b5702055eb041ffe9fb3a4424c08b065e9fb62ce313dcd9.png" for ::1 at 2016-01-21 12:31:08 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for ::1 at 2016-01-21 12:31:08 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 12:32:59 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.5ms)
+  Rendered welcome/index.haml within layouts/application (3.0ms)
+Completed 200 OK in 61ms (Views: 60.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 12:32:59 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 12:32:59 -0700
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 12:32:59 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 12:32:59 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 12:33:00 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 12:33:00 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 12:33:00 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 12:33:00 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 12:33:00 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 12:33:00 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 12:33:00 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 12:33:00 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 12:33:00 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-01-21 12:33:01 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 12:33:01 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 12:33:01 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 12:33:01 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 12:33:03 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 12:33:55 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.3ms)
+  Rendered welcome/index.haml within layouts/application (2.6ms)
+Completed 200 OK in 62ms (Views: 61.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 12:33:55 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 12:33:55 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 12:33:55 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 12:33:55 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 12:33:55 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 12:33:55 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 12:33:55 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 12:33:55 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 12:33:55 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 12:33:55 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 12:33:55 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 12:33:55 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 12:33:55 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 12:33:55 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-01-21 12:33:56 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 12:33:56 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 12:39:29 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 12:39:42 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.3ms)
+  Rendered welcome/index.haml within layouts/application (3.0ms)
+Completed 200 OK in 63ms (Views: 62.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 12:39:42 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 12:39:42 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 12:39:42 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 12:39:43 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 12:39:43 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 12:39:43 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 12:39:43 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 12:39:43 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 12:39:43 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 12:39:43 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 12:39:43 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 12:39:43 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 12:39:43 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-01-21 12:39:43 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 12:39:43 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 12:39:43 -0700
+
+
+Started GET "/who" for ::1 at 2016-01-21 12:44:23 -0700
+Processing by PageController#who as HTML
+  Rendered shared/_header.html.haml (12.4ms)
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered page/who.html.haml within layouts/application (23.1ms)
+Completed 200 OK in 106ms (Views: 104.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 12:44:23 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 12:44:23 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 12:44:23 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 12:44:24 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 12:44:25 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 12:47:00 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (2.9ms)
+Completed 200 OK in 59ms (Views: 58.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 12:47:00 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 12:47:00 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 12:47:00 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 12:47:01 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 12:47:01 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 12:47:01 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 12:47:02 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 12:47:02 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 12:47:02 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 12:47:02 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 12:47:02 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 12:47:02 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 12:47:02 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 12:47:02 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-01-21 12:47:02 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 12:47:02 -0700
+
+
+Started GET "/who" for ::1 at 2016-01-21 12:49:19 -0700
+Processing by PageController#who as HTML
+  Rendered shared/_header.html.haml (0.5ms)
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered page/who.html.haml within layouts/application (5.0ms)
+Completed 200 OK in 80ms (Views: 79.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 12:49:19 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 12:49:19 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 12:49:19 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 12:49:20 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 12:49:20 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 12:49:35 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.3ms)
+  Rendered welcome/index.haml within layouts/application (2.8ms)
+Completed 200 OK in 115ms (Views: 114.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 12:49:35 -0700
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 12:49:35 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 12:49:35 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 12:49:36 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 12:49:36 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 12:49:36 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 12:49:36 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 12:49:36 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 12:49:36 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 12:49:36 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 12:49:36 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 12:49:37 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 12:49:37 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-01-21 12:49:37 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 12:49:37 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 12:49:37 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 12:50:23 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.4ms)
+  Rendered welcome/index.haml within layouts/application (2.9ms)
+Completed 200 OK in 61ms (Views: 60.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 12:50:24 -0700
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 12:50:24 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 12:50:24 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 12:50:24 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 12:50:24 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 12:50:24 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 12:50:24 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 12:50:25 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 12:50:25 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 12:50:25 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 12:50:25 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 12:50:25 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-01-21 12:50:25 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 12:50:25 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 12:50:25 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 12:50:25 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 12:55:59 -0700
+
+
+Started GET "/world-map" for ::1 at 2016-01-21 12:59:15 -0700
+Processing by PageController#world_map as HTML
+  Rendered shared/_header.html.haml (0.4ms)
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered page/world_map.html.haml within layouts/application (6.3ms)
+Completed 200 OK in 59ms (Views: 58.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 12:59:15 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 12:59:15 -0700
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 12:59:15 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 12:59:15 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 12:59:15 -0700
+
+
+Started GET "/contact" for ::1 at 2016-01-21 13:02:53 -0700
+Processing by PageController#contact as HTML
+  Rendered shared/_header.html.haml (0.4ms)
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered page/contact.html.haml within layouts/application (18.8ms)
+Completed 200 OK in 72ms (Views: 70.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 13:02:54 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 13:02:54 -0700
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 13:02:54 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 13:02:54 -0700
+
+
+Started GET "/index.php/component/rsform/?task=captcha&amp;componentId=41&amp;tmpl=component&amp;sid=560383254" for ::1 at 2016-01-21 13:02:54 -0700
+
+ActionController::RoutingError (No route matches [GET] "/index.php/component/rsform"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  request_store (1.3.0) lib/request_store/middleware.rb:9:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/dwetteroth/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/dwetteroth/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/dwetteroth/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.4ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (20.6ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (14.1ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.2ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (290.1ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (110.5ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (272.4ms)
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 13:02:55 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 13:03:57 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.7ms)
+  Rendered welcome/index.haml within layouts/application (5.4ms)
+Completed 200 OK in 69ms (Views: 67.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 13:03:57 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 13:03:57 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 13:03:57 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 13:04:01 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 13:04:01 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 13:04:01 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 13:04:01 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 13:04:01 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 13:04:01 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 13:04:01 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 13:04:01 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 13:04:01 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 13:04:02 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 13:04:02 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-01-21 13:04:02 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 13:04:02 -0700
+
+
+Started GET "/contact" for ::1 at 2016-01-21 13:04:15 -0700
+Processing by PageController#contact as HTML
+  Rendered shared/_header.html.haml (0.4ms)
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered page/contact.html.haml within layouts/application (3.5ms)
+Completed 200 OK in 64ms (Views: 62.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 13:04:15 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 13:04:15 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 13:04:15 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 13:04:16 -0700
+
+
+Started GET "/index.php/component/rsform/?task=captcha&amp;componentId=41&amp;tmpl=component&amp;sid=560383254" for ::1 at 2016-01-21 13:04:16 -0700
+
+ActionController::RoutingError (No route matches [GET] "/index.php/component/rsform"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  request_store (1.3.0) lib/request_store/middleware.rb:9:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/dwetteroth/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/dwetteroth/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/dwetteroth/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.4ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.3ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.6ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (200.4ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (84.7ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.2ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (197.6ms)
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 13:04:16 -0700
+
+
+Started GET "/" for ::1 at 2016-01-21 13:04:41 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.7ms)
+  Rendered welcome/index.haml within layouts/application (6.0ms)
+Completed 200 OK in 91ms (Views: 90.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 13:04:41 -0700
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 13:04:41 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 13:04:41 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-01-21 13:04:42 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 13:04:42 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-01-21 13:04:42 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-01-21 13:04:42 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-01-21 13:04:42 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-01-21 13:04:42 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-01-21 13:04:42 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-01-21 13:04:42 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-01-21 13:04:42 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-01-21 13:04:42 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-01-21 13:04:42 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-01-21 13:04:43 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 13:04:43 -0700
+
+
+Started GET "/contact" for ::1 at 2016-01-21 13:05:50 -0700
+Processing by PageController#contact as HTML
+  Rendered shared/_header.html.haml (0.4ms)
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered page/contact.html.haml within layouts/application (3.6ms)
+Completed 200 OK in 63ms (Views: 61.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-01-21 13:05:50 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-01-21 13:05:50 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-01-21 13:05:50 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-01-21 13:05:54 -0700
+
+
+Started GET "/index.php/component/rsform/?task=captcha&amp;componentId=41&amp;tmpl=component&amp;sid=560383254" for ::1 at 2016-01-21 13:05:54 -0700
+
+ActionController::RoutingError (No route matches [GET] "/index.php/component/rsform"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  request_store (1.3.0) lib/request_store/middleware.rb:9:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/dwetteroth/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/dwetteroth/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/dwetteroth/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.2ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (154.8ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (85.0ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/dwetteroth/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (193.6ms)
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-01-21 13:05:54 -0700
+
+
+Started GET "/" for ::1 at 2016-02-14 21:59:51 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (10.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (20.4ms)
+  Rendered welcome/index.haml within layouts/application (81.9ms)
+Completed 200 OK in 514ms (Views: 501.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-02-14 21:59:52 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (3.0ms)
+Completed 200 OK in 68ms (Views: 67.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-02-14 21:59:52 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-02-14 21:59:52 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-02-14 21:59:52 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-02-14 21:59:52 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-02-14 21:59:52 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-02-14 21:59:52 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-02-14 21:59:52 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-02-14 21:59:52 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-02-14 21:59:52 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-02-14 21:59:52 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-02-14 21:59:52 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-02-14 21:59:52 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-02-14 21:59:52 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-02-14 21:59:52 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-02-14 21:59:52 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-02-14 21:59:52 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-02-14 22:05:27 -0700
+
+
+Started GET "/" for ::1 at 2016-02-14 22:46:23 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (25.9ms)
+Completed 200 OK in 82ms (Views: 81.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-02-14 22:46:23 -0700
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-02-14 22:46:23 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-02-14 22:46:23 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-02-14 22:46:23 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-02-14 22:46:23 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-02-14 22:46:23 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-02-14 22:46:23 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-02-14 22:46:23 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-02-14 22:46:23 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-02-14 22:46:23 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-02-14 22:46:23 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-02-14 22:46:23 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-02-14 22:46:23 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-02-14 22:46:24 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-02-14 22:46:24 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-02-14 22:46:24 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-02-14 22:46:24 -0700
+
+
+Started GET "/" for ::1 at 2016-02-14 22:48:04 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (32.0ms)
+Completed 200 OK in 143ms (Views: 141.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-02-14 22:48:05 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-02-14 22:48:05 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-02-14 22:48:05 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-02-14 22:48:05 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-02-14 22:48:05 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-02-14 22:48:05 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-02-14 22:48:05 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-02-14 22:48:05 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-02-14 22:48:05 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-02-14 22:48:05 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-02-14 22:48:05 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-02-14 22:48:05 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-02-14 22:48:05 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-02-14 22:48:05 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-02-14 22:48:05 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-02-14 22:48:05 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-02-14 22:48:05 -0700
+
+
+Started GET "/" for ::1 at 2016-02-14 22:48:07 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.3ms)
+  Rendered welcome/index.haml within layouts/application (3.0ms)
+Completed 200 OK in 81ms (Views: 80.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-02-14 22:48:08 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-02-14 22:48:08 -0700
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-02-14 22:48:08 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-02-14 22:48:08 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-02-14 22:48:08 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-02-14 22:48:08 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-02-14 22:48:08 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-02-14 22:48:08 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-02-14 22:48:08 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-02-14 22:48:08 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-02-14 22:48:08 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-02-14 22:48:08 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-02-14 22:48:08 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-02-14 22:48:08 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-02-14 22:48:08 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-02-14 22:48:08 -0700
+
+
+Started GET "/" for ::1 at 2016-02-14 22:48:19 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.3ms)
+  Rendered welcome/index.haml within layouts/application (30.3ms)
+Completed 200 OK in 118ms (Views: 116.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-02-14 22:48:19 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-02-14 22:48:19 -0700
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-02-14 22:48:19 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-02-14 22:48:19 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-02-14 22:48:19 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-02-14 22:48:19 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-02-14 22:48:19 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-02-14 22:48:19 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-02-14 22:48:20 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-02-14 22:48:20 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-02-14 22:48:20 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-02-14 22:48:20 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-02-14 22:48:20 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-02-14 22:48:20 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-02-14 22:48:20 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-02-14 22:48:20 -0700
+
+
+Started GET "/" for ::1 at 2016-02-14 22:48:32 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (2.5ms)
+Completed 200 OK in 86ms (Views: 85.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-02-14 22:48:33 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-02-14 22:48:33 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-02-14 22:48:33 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-02-14 22:48:33 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-02-14 22:48:33 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-02-14 22:48:33 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-02-14 22:48:33 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-02-14 22:48:33 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-02-14 22:48:33 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-02-14 22:48:33 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-02-14 22:48:33 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-02-14 22:48:33 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-02-14 22:48:33 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-02-14 22:48:33 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-02-14 22:48:33 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-02-14 22:48:33 -0700
+
+
+Started GET "/" for ::1 at 2016-02-14 22:49:50 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.3ms)
+  Rendered welcome/index.haml within layouts/application (30.3ms)
+Completed 200 OK in 93ms (Views: 92.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-02-14 22:49:50 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-02-14 22:49:50 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-02-14 22:49:50 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-02-14 22:49:50 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-02-14 22:49:51 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-02-14 22:49:51 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-02-14 22:49:51 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-02-14 22:49:51 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-02-14 22:49:51 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-02-14 22:49:51 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-02-14 22:49:51 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-02-14 22:49:51 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-02-14 22:49:51 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-02-14 22:49:51 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-02-14 22:49:51 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-02-14 22:49:51 -0700
+
+
+Started GET "/" for ::1 at 2016-02-14 22:50:19 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (29.9ms)
+Completed 200 OK in 133ms (Views: 132.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-02-14 22:50:19 -0700
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-02-14 22:50:20 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-02-14 22:50:20 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-02-14 22:50:20 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-02-14 22:50:20 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-02-14 22:50:20 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-02-14 22:50:20 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-02-14 22:50:20 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-02-14 22:50:20 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-02-14 22:50:20 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-02-14 22:50:20 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-02-14 22:50:20 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-02-14 22:50:20 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-02-14 22:50:20 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-02-14 22:50:20 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-02-14 22:50:20 -0700
+
+
+Started GET "/" for ::1 at 2016-02-14 22:50:38 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (30.8ms)
+Completed 200 OK in 106ms (Views: 105.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-02-14 22:50:38 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-02-14 22:50:38 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-02-14 22:50:38 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-02-14 22:50:38 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-02-14 22:50:38 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-02-14 22:50:38 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-02-14 22:50:38 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-02-14 22:50:38 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-02-14 22:50:38 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-02-14 22:50:38 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-02-14 22:50:38 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-02-14 22:50:38 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-02-14 22:50:38 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-02-14 22:50:38 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-02-14 22:50:39 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-02-14 22:50:39 -0700
+
+
+Started GET "/" for ::1 at 2016-02-14 22:50:57 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.3ms)
+  Rendered welcome/index.haml within layouts/application (34.3ms)
+Completed 200 OK in 146ms (Views: 144.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-02-14 22:50:57 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-02-14 22:50:57 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-02-14 22:50:57 -0700
+
+
+Started GET "/assets/application.self-d27b44281e2f084dcfcc39b494557bde747515dbfcd42b19ffc3a99d69899fc2.css?body=1" for ::1 at 2016-02-14 22:50:57 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-02-14 22:50:57 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-02-14 22:50:57 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-02-14 22:50:57 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-02-14 22:50:57 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-02-14 22:50:57 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-02-14 22:50:57 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-02-14 22:50:57 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-02-14 22:50:57 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-02-14 22:50:57 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-02-14 22:50:57 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-02-14 22:50:57 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-02-14 22:50:57 -0700
+
+
+Started GET "/" for ::1 at 2016-02-14 22:51:42 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.5ms)
+  Rendered welcome/index.haml within layouts/application (5.7ms)
+Completed 200 OK in 2767ms (Views: 2766.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-02-14 22:51:45 -0700
+
+
+Started GET "/assets/application.self-f917e9e20f026b2c8d4a3b6be197348ae33e5dc9341eb3ab17886e50badd5a65.css?body=1" for ::1 at 2016-02-14 22:51:45 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-02-14 22:51:45 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-02-14 22:51:45 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-02-14 22:51:45 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-02-14 22:51:45 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-02-14 22:51:45 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-02-14 22:51:45 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-02-14 22:51:45 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-02-14 22:51:45 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-02-14 22:51:45 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-02-14 22:51:45 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-02-14 22:51:46 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-02-14 22:51:46 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-02-14 22:51:46 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-02-14 22:51:46 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-02-14 22:51:46 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-02-14 22:57:19 -0700
+
+
+Started GET "/" for ::1 at 2016-02-14 22:57:46 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered welcome/index.haml within layouts/application (26.9ms)
+Completed 200 OK in 84ms (Views: 83.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f917e9e20f026b2c8d4a3b6be197348ae33e5dc9341eb3ab17886e50badd5a65.css?body=1" for ::1 at 2016-02-14 22:57:46 -0700
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-02-14 22:57:46 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-02-14 22:57:46 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-02-14 22:57:46 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-02-14 22:57:46 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-02-14 22:57:46 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-02-14 22:57:46 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-02-14 22:57:46 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-02-14 22:57:46 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-02-14 22:57:46 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-02-14 22:57:46 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-02-14 22:57:46 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-02-14 22:57:46 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-02-14 22:57:46 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-02-14 22:57:46 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-02-14 22:57:47 -0700
+
+
+Started GET "/" for ::1 at 2016-02-14 23:00:36 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.3ms)
+  Rendered welcome/index.haml within layouts/application (34.1ms)
+Completed 200 OK in 102ms (Views: 101.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-02-14 23:00:36 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-02-14 23:00:36 -0700
+
+
+Started GET "/assets/application.self-f917e9e20f026b2c8d4a3b6be197348ae33e5dc9341eb3ab17886e50badd5a65.css?body=1" for ::1 at 2016-02-14 23:00:36 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-02-14 23:00:36 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-02-14 23:00:36 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-02-14 23:00:36 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-02-14 23:00:36 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-02-14 23:00:36 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-02-14 23:00:36 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-02-14 23:00:36 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-02-14 23:00:37 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-02-14 23:00:37 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-02-14 23:00:37 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-02-14 23:00:37 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-02-14 23:00:37 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-02-14 23:00:37 -0700
+
+
+Started GET "/" for ::1 at 2016-02-14 23:00:49 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.6ms)
+  Rendered welcome/index.haml within layouts/application (48.5ms)
+Completed 200 OK in 160ms (Views: 158.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-02-14 23:00:50 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-02-14 23:00:50 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-02-14 23:00:50 -0700
+
+
+Started GET "/assets/application.self-f917e9e20f026b2c8d4a3b6be197348ae33e5dc9341eb3ab17886e50badd5a65.css?body=1" for ::1 at 2016-02-14 23:00:50 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-02-14 23:00:50 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-02-14 23:00:50 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-02-14 23:00:50 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-02-14 23:00:50 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-02-14 23:00:50 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-02-14 23:00:50 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-02-14 23:00:50 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-02-14 23:00:50 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-02-14 23:00:50 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-02-14 23:00:50 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-02-14 23:00:50 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-02-14 23:00:50 -0700
+
+
+Started GET "/" for ::1 at 2016-02-14 23:02:26 -0700
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (0.3ms)
+  Rendered welcome/index.haml within layouts/application (31.0ms)
+Completed 200 OK in 2706ms (Views: 2705.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-c430e6871c628a442975552882a37f140d80fcb2a5cceb1783171bbaac5b3271.js?body=1" for ::1 at 2016-02-14 23:02:29 -0700
+
+
+Started GET "/assets/foundation.self-af5663ac77f330fca2b3d8033dad348f0d78b56d221c65a1687a2c136ecab47a.js?body=1" for ::1 at 2016-02-14 23:02:29 -0700
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-02-14 23:02:29 -0700
+
+
+Started GET "/assets/application.self-fa44cd09afc18dd424a743df438c08f7b30908800ee5c46a30383942f23e18de.css?body=1" for ::1 at 2016-02-14 23:02:29 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-02-14 23:02:29 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-02-14 23:02:29 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-02-14 23:02:29 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-02-14 23:02:29 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-02-14 23:02:29 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-02-14 23:02:29 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-02-14 23:02:29 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-02-14 23:02:29 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-02-14 23:02:29 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-02-14 23:02:29 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-02-14 23:02:29 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-02-14 23:02:30 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-02-14 23:08:03 -0700
+
+
+Started GET "/" for ::1 at 2016-02-23 13:31:42 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (7.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered shared/_footer.html.haml (43.4ms)
+  Rendered welcome/index.haml within layouts/application (133.0ms)
+Completed 200 OK in 1003ms (Views: 977.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/polarbear.mp4" for ::1 at 2016-02-23 13:31:43 -0700
+
+
+Started GET "/assets/hp-middle3.jpg" for ::1 at 2016-02-23 13:31:44 -0700
+
+
+Started GET "/assets/zoetis.jpg" for ::1 at 2016-02-23 13:31:44 -0700
+
+
+Started GET "/assets/spo6.jpg" for ::1 at 2016-02-23 13:31:44 -0700
+
+
+Started GET "/assets/hp-middle2.png" for ::1 at 2016-02-23 13:31:44 -0700
+
+
+Started GET "/assets/logo.png" for ::1 at 2016-02-23 13:31:44 -0700
+
+
+Started GET "/assets/apexx-logo-small-transparent.png" for ::1 at 2016-02-23 13:31:44 -0700
+
+
+Started GET "/assets/petplan.jpg" for ::1 at 2016-02-23 13:31:44 -0700
+
+
+Started GET "/assets/worldGlobe.jpg" for ::1 at 2016-02-23 13:31:44 -0700
+
+
+Started GET "/assets/2peep.jpg" for ::1 at 2016-02-23 13:31:44 -0700
+
+
+Started GET "/assets/footer_logo.png" for ::1 at 2016-02-23 13:31:44 -0700
+
+
+Started GET "/assets/slide30-cows.jpg" for ::1 at 2016-02-23 13:31:44 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-02-23 13:31:44 -0700
+
+
+Started GET "/assets/safari.mp4" for ::1 at 2016-02-23 13:37:20 -0700

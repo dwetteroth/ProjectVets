@@ -44,12 +44,16 @@
   }
 }
 
+.max-width {
+  max-width:100rem !important;
+}
+
 
 
 @media (min-width: 1200px) {
-  .container {
-      width: 1300px;
-  }
+  // .container {
+  //     width: 1300px;
+  // }
 }
 
 
