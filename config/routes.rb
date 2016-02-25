@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 	get '/donations' => 'page#donations'
 
 	get '/donate' => 'page#donate'
+	get '/donations' => 'page#donate'
 	get '/celebration' => 'page#celebration'
 
 	get '/shop' => 'page#shop'
@@ -41,6 +42,9 @@ Rails.application.routes.draw do
 
 	get '/recipients' => 'page#recipients'
 
+
+
+	
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

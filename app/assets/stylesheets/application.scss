@@ -1,48 +1,168 @@
 
 
- // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
- @import "bootstrap-sprockets";
- @import "bootstrap";
- @import "components/carousel";
+.menu {
+  background-color:transparent !important;
+  color: #fff ;
+  a {
+    color: #fff !important;
+    font-weight: 500;
+  }
+}
+
+
+.row {
+  margin-top:20px;
+}
+
+.no-margin {
+  margin: 0px;
+}
+
+footer {
+  li {
+  color: #000 !important;
+}
+  .menu {
+    a {
+        color: #000 !important;
+    }
+  }
+
+}
+
+.fullWidth {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+}
+
+
+
+.doggy {
+  background-image: url(/assets/doggy.jpg);
+  height:600px;
+  background-size: cover;
+
+}
+.doggy-side {
+  background-color: #525e4e;
+  height:600px;
+  color: #fff;
+  font-weight: 300;
+  padding: 90px;
+  padding-top:140px;
+}
+.bottom-hp {
+  background-image: url(/assets/street.jpg);
+  height:600px;
+  background-size: cover;
+}
+
+.callout.large {
+  padding: 0rem;
+}
+
+.top-bar-right {
+  .button {
+    margin-top:30px;
+  }
+}
+
+
+.button {
+  background-color: #687819;
+  &.clear {
+    background: transparent;
+    border: 1px solid #fff;
+  }
+}
+
+.dropdown.menu .has-submenu.is-down-arrow>a::after {
+  border-color: #687819 transparent transparent;
+}
 
 
 
 
  .callout {
      //width:100%;
-    //  background-color: transparent;
-     min-height:530px;
+     &.primary {
+       background-image: url('/assets/leopard.jpg');
+     }
+      min-height:530px;
      border: 0px;
 
  }
 
- .fullscreen-bg {
-     position: fixed;
-     top: 0;
-     right: 0;
-     bottom: 0;
-     left: 0;
-     overflow: hidden;
-     z-index: -100;
-     margin-top: -60px;
- }
 
- .fullscreen-bg__video {
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 200%;
-     margin-top: -60px;
- }
 
- @media (min-aspect-ratio: 16/9) {
-  .fullscreen-bg__video {
-    width: 100%;
-    height: 150%;
-    margin-top: -60px;
-  }
-}
+
+
+ .menu-text {
+   color: #fff; }
+
+
+
+
+
+
+
+
+
+
+
+   .menu-text {
+     color: #fff;
+
+
+   }
+
+
+
+
+
+
+
+
+
+
+   @media only screen and (max-width: 40em) {
+
+     .top-bar {
+       display:none;
+     }
+   }
+
+
+//
+//  .fullscreen-bg {
+//      position: fixed;
+//      top: 0;
+//      right: 0;
+//      bottom: 0;
+//      left: 0;
+//      overflow: hidden;
+//      z-index: -100;
+//      margin-top: -60px;
+//  }
+//
+//  .fullscreen-bg__video {
+//      position: absolute;
+//      top: 0;
+//      left: 0;
+//      width: 100%;
+//      height: 200%;
+//      margin-top: -60px;
+//  }
+//
+//  @media (min-aspect-ratio: 16/9) {
+//   .fullscreen-bg__video {
+//     width: 100%;
+//     height: 150%;
+//     margin-top: -60px;
+//   }
+// }
 
 .max-width {
   max-width:100rem !important;
@@ -72,19 +192,19 @@
   }
 }
 .main-hp {
-  background-image: url(/assets/slide30-cows.jpg);
-  background-repeat: no-repeat;
-  height:600px !important;
+  // background-image: url(/assets/slide30-cows.jpg);
+  // background-repeat: no-repeat;
+  height:350px !important;
   overflow: hidden;
   .callout {
       //width:100%;
-      background-color: transparent;
-      border: 0px;
+      //background-color: transparent;
+      // border: 0px;
 
 
       min-height:0px;
       p{
-        background-color:rgba(0,0,0,0.5);
+        // background-color:rgba(0,0,0,0.5);
 
         height:130px;
         width:100%;
@@ -120,7 +240,7 @@ footer {
 
 
 body {
-  background-color: #D0CE9F !important;
+  // background-color: #D0CE9F !important;
 }
 
 .callout {

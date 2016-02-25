@@ -1,0 +1,92 @@
+=render '/shared/header'
+
+
+#content.row{style:"background-color:#fff;padding:20px;margin-bottom:20px;min-height:600px;"}
+  .medium-8.columns
+    .blog-post
+      %h3{style:"margin-bottom:25px;"}
+        Monetary Donations
+
+
+      %p
+        Project V.E.T.S. needs your help!  Monetary donations are used to assist with the cost to ship supplies and equipment to our Recipient Organizations around the world, and to support general needs for our small organization.  An average box of supplies weighs 25 pounds.  To ship one box to a U.S. based group costs approximately $40.00.  This same box sent to one of our overseas Recipient Organizations will cost on average $120.00.
+
+      %h4
+        Please click on the “Donate Now” button to make a contribution.
+      %p
+        %a{:href => "https://donatenow.networkforgood.org/projectvets?code=website%20donate%20now%20button", :target=>"_blank"}
+          =image_tag("DN2Button-RedSmall.png")
+
+
+      %h4
+        Or you can also mail a check to:
+      %p
+        Project V.E.T.S.
+        %br
+
+        1630 A 30th Street, #256
+        %br
+
+        Boulder, CO 80301 USA
+
+        .row
+          .medium-6.columns
+            =image_tag('m1.jpg')
+          .medium-6.columns
+            =image_tag('m2.jpg')
+        .row
+          .medium-6.columns
+            =image_tag('m3.jpg')
+          .medium-6.columns
+            =image_tag('m4.jpg')
+        .row
+          .medium-6.columns
+            =image_tag('m5.jpg')
+          .medium-6.columns
+            =image_tag('m6.jpg')
+
+
+  .medium-3.columns.hide-for-small-only{"data-sticky-container" => ""}
+    .sticky{"data-anchor" => "content", "data-sticky" => ""}
+      %ul.accordion{"data-accordion" => "", "data-multi-expand"=>"true"}
+        %li.accordion-item.is-active
+          / The tab title needs role="tab", an href, a unique ID, and aria-controls.
+          %a#panel1d-heading.accordion-title{"aria-controls" => "panel1d", :href => "#panel1d", :role => "tab", style:"font-size:14px;"} How You Can Help
+          / The content pane needs an ID that matches the above href, role="tabpanel", data-tab-content, and aria-labelledby.
+          #panel1d.accordion-content{"aria-labelledby" => "panel1d-heading", "data-tab-content" => "", :role => "tabpanel"}
+            %ul.accord
+              %li
+                %a{:href => "/"}
+                  Monetary Donations
+              %li
+                %a{:href => "/"}
+                  Donate Equipment, Tech, or supplies
+              %li
+                %a{:href => "/"}
+                  Celebrations & memorials
+              %li
+                %a{:href => "/"}
+                  Volunteer
+              %li
+                %a{:href => "/"}
+                  Shop
+
+        %li.accordion-item
+          / The tab title needs role="tab", an href, a unique ID, and aria-controls.
+          %a#panel1d-heading.accordion-title{"aria-controls" => "panel1d", :href => "#panel1d", :role => "tab", style:"font-size:14px;"} Sign up for our e-newsletter
+          / The content pane needs an ID that matches the above href, role="tabpanel", data-tab-content, and aria-labelledby.
+          #panel1d.accordion-content{"aria-labelledby" => "panel1d-heading", "data-tab-content" => "", :role => "tabpanel"}
+            %form
+              %input{:placeholder=>"Name"}
+              %br
+              %input{:placeholder=>"Email"}
+              %br
+              %a.btn.btn-default{:href => "#", :role => "button"} Submit
+
+
+
+
+
+
+
+=render '/shared/footer'

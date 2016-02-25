@@ -29,4 +29,12 @@ class PageController < ApplicationController
   end
 
   def world_map;end
+
+  def donate;end
+  def gallery;end
+  def celebration;end
+
+  def donations
+    render :donate
+  end
 end

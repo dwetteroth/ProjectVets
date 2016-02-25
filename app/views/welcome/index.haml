@@ -1,5 +1,61 @@
 
 
+.callout.large.primary
+  =render '/shared/header'
+
+  .row.column.text-center
+
+
+.row
+
+
+  .small-12.medium-8.large-8.medium-centered.large-centered.columns{style:"text-align:justify;font-weight:500"}
+    %p We are a 501(c)(3) organization dedicated to helping improve the health and welfare of animals around the globe. We achieve this goal by collecting veterinary equipment, technology and supplies (V.E.T.S.) from veterinary hospitals, veterinary colleges, zoological societies, human hospitals and medical equipment/supply manufacturers.
+
+
+.row
+  .small-12.medium-8.large-8.medium-centered.large-centered.columns
+    .medium-6.columns.text-center
+      %i.fa.fa-users.fa-2{style:"font-size:10rem;"}
+      .row.columns
+        %p Project V.E.T.S. is seeking your donations! We need veterinary/medical equipment and supplies, new or used, in good-to-excellent working condition. For those supplies that carry an expiration date, please contact us prior to shipping to see if we can accept them.
+    .medium-6.columns.text-center
+      %i.fa.fa-plane{style:"font-size:10rem;"}
+      .row.columns
+        %p We are an organization dedicated to helping improve the health and welfare of animals around the globe. We achieve this goal by collecting veterinary equipment, technology and supplies (V.E.T.S.) which we then donate to veterinarians worldwide working in animal related non-profits.
+
+
+
+
+.row.fullWidth
+  .medium-6.columns.doggy
+
+  .medium-6.columns.doggy-side
+    .medium-12.columns.medium-centered
+      %h2
+        Conserve, Help, Donate
+
+    .medium-10.columns.medium-centered
+      %p
+        We not only help the animals of our planet, but we also conserve valuable resources that might otherwise end up in someone’s storage facility or a landfill.
+      .button.clear
+        Learn more about us
+
+.row.fullWidth.no-margin
+
+  .medium-12.columns.bottom-hp.text-center
+    .small-12.medium-8.large-8.medium-centered.large-centered.columns{style:"color:#fff;padding-top:50px;"}
+
+
+      .medium-12.columns.medium-centered
+        %h2{style:"font-weight:500;"}
+          Help us on our road to supply the world
+        .button.large
+          Learn More
+
+
+
+
 :javascript
   (function(d, s, id) {
   	var js, fjs = d.getElementsByTagName(s)[0];
@@ -8,208 +64,5 @@
   	js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
   	fjs.parentNode.insertBefore(js, fjs);
   	}(document, 'script', 'facebook-jssdk'));
-.callout.large.primary.main-hp
-  %video.fullscreen-bg__video{:autoplay => "true", :loop => "true", :muted => "true", :poster => "/assets/polarbear.mp4", style:"height:900px;"}
-    %source{:src => "/assets/safari.mp4", :type => "video/webm"}
-    %source{:src => "/assets/safari.mp4", :type => "video/mp4"}
-
-  .row.column.text-center
-    .large-12.small-12
-      .callout
-        %nav.navbar.navbar-inverse.navbar-static-top{style:"margin-top:-50px;height:60px;"}
-          .container
-            .navbar-header
-              %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
-                %span.sr-only Toggle navigation
-                %span.icon-bar
-                %span.icon-bar
-                %span.icon-bar
-              -# %a.navbar-brand{:href => "/"} Project Vets
-            #navbar.navbar-collapse.collapse
-
-              %ul.nav.navbar-nav
-                %li
-                  %img{src:"/assets/logo.png", style:"width:50px;"}
-                %li.active
-                  %a{:href => "/"} HOME
-                %li.dropdown
-                  %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-                    WHO WE ARE
-                    %span.caret
-                  %ul.dropdown-menu
-                    %li
-                      %a{:href => "/mission"} Mission Statement
-                    %li
-                      %a{:href => "/history"} History
-                    %li
-                      %a{:href => "/board"} Our Board
-                    %li
-                      %a{:href => "/staff"} Our Staff
-                    %li
-                      %a{:href => "/partners"} Strategic Partners
-                    %li
-                      %a{:href => "/donors"} Our Donors
-                    %li
-                      %a{:href => "/reports"} Annual Reports
-                %li.dropdown
-                  %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-                    HOW YOU CAN HELP
-                    %span.caret
-                  %ul.dropdown-menu
-                    %li
-                      %a{:href => "/donations"} Monetary Donations
-                    %li
-                      %a{:href => "/donate"} Donate Equipment, Technology, Supplies
-                    %li
-                      %a{:href => "/celebration"} Celebrations &amp; Memorials
-                    %li
-                      %a{:href => "/volunteer"} Volunteer
-                    %li
-                      %a{:href => "/shop"} Shop
-                %li.dropdown
-                  %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-                    OUR RECIPIENTS
-                    %span.caret
-                  %ul.dropdown-menu
-                    %li
-                      %a{:href => "/by-name"} By Name
-                    %li
-                      %a{:href => "/world-map"} World Map
-                    %li
-                      %a{:href => "/gallery"} Gallery
-                    %li
-                      %a{:href => "/assistance"} Apply for Assistance
-                %li
-                  %a{:href => "/contact"} CONTACT US
-              .col-sm-5.col-md-4.col-md-4.pull-right
-                .row
-                  .col-md-7
-                    %form.navbar-form{:role => "search"}
-                      .input-group
-                        %input#srch-term.form-control{:name => "srch-term", :placeholder => "Search", :type => "text", style:"width:200px"}
-                  -# .col-md-1
-                  -#   .input-group-btn
-                  -#     %button.btn.btn-default{:type => "submit"}
-                  -#       %i.glyphicon.glyphicon-search
-                  .col-md-5
-                    %img#imgDonateButton{:alt => "DonateNow", :border => "0", :src => "https://assets.networkforgood.org/dn2buttons/DN2Button-RedLarge.png", style:"width:100%;margin-top:7px;"}/
-                  -# %a.btn.btn-sm.btn-primary{:href => "#", :role => "button"} Donate Now
-
-
-  .row.small-up-1.medium-up-6.large-up-4{style:"margin-top:320px;"}
-    .column{style:"margin-right:130px;"}
-      .callout
-
-        %p.lead
-          Heal
-          %br
-          %a.btn.btn-default{:href => "#", :role => "button"} Learn more &raquo;
-
-
-    .column{style:"margin-right:130px;"}
-      .callout
-
-        %p
-
-
-          %img#imgDonateButton{:alt => "DonateNow", :border => "0", :src => "https://assets.networkforgood.org/dn2buttons/DN2Button-RedLarge.png", style:"width:100%;margin-top:7px;"}/
-    .column
-      .callout
-
-        %p.lead
-          Distribute
-          %br
-          %a.btn.btn-default{:href => "#", :role => "button"} Learn more &raquo;
-
-
-.row.small-up-1.medium-up-1.large-up-1.hide-for-small-only
-  .column
-    .callout.newsletter
-      %form
-        .row.small-up-1.medium-up-4.large-up-4
-
-          .column
-            Sign up for our e-newsletter
-          .column
-
-            %input{placeholder:"Name"}
-
-
-
-          .column
-            %input{placeholder:"Email"}
-          .column
-
-            %a.btn.btn-default{:href => "#", :role => "button"} Sign-up &raquo;
-
-
-.row.small-up-1.medium-up-2.large-up-3
-  .column.hide-for-small-only
-    .callout
-      .fb-page{"data-hide-cover" => "false", "data-href" => "http://www.facebook.com/pages/Project-VETS-Veterinary-Equipment-Technology-and-Supplies/88510373715", "data-tabs" => "timeline,events,messages", "data-width" => "380"}
-  .column
-    .callout
-
-      %p
-        %img{:alt => "image of a planet called Pegasi B", :src => "/assets/hp-middle2.png", style:"width:340px;"}/
-      %p.lead How You Can Help
-      %p.subheader Project V.E.T.S. is seeking your donations! We need veterinary/medical equipment and supplies, new or used, in good-to-excellent working condition. For those supplies that carry an expiration date, please contact us prior to shipping to see if we can accept them.
-      %p
-        %a.btn.btn-default{:href => "#", :role => "button"} Learn more &raquo;
-  .column
-    .callout
-
-      %p
-        %img{:alt => "image of a planet called Pegasi B", :src => "/assets/hp-middle3.jpg", style:"width:340px;"}/
-      %p.lead Who We Are
-      %p.subheader We are an organization dedicated to helping improve the health and welfare of animals around the globe. We achieve this goal by collecting veterinary equipment, technology and supplies (V.E.T.S.) which we then donate to veterinarians worldwide working in animal related non-profits.
-      %p
-        %a.btn.btn-default{:href => "#", :role => "button"} Learn more &raquo;
-
-
-
-
-
-
-
-
-
-
-
-
-
-.row.small-up-1.medium-up-1.large-up-1.hide-for-small-only
-  .column
-    .callout.donors
-      .row.small-up-1.medium-up-2.large-up-2
-        .column
-          .donor-slider
-            %div
-              %img{src:"/assets/zoetis.jpg"}
-            %div
-              %img{src:"/assets/spo6.jpg"}
-            %div
-              %img{src:"/assets/apexx-logo-small-transparent.png"}
-            %div
-              %img{src:"/assets/petplan.jpg"}
-        .column.center-it
-          %p.lead Our Recipients
-          .row.small-up-4.medium-up-2.large-up-2
-
-            .column
-              %img{src:"/assets/worldGlobe.jpg", style:"width:30%"}
-            .column
-              %img{src:"/assets/2peep.jpg", style:"width:40%"}
-
-
-
-.row.max-width{style:"height:200px;"}
-  .medium-6.small-6.columns{style:"background-color: #ccc;height:200px"}
-
-
-
-  .medium-6.small-6.columns{style:"background-color: #fff;height:200px"}
-
-
 
 =render '/shared/footer'
