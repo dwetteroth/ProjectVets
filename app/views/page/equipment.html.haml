@@ -1,0 +1,109 @@
+=render '/shared/header'
+
+
+#content.row{style:"background-color:#fff;padding:20px;margin-bottom:20px;min-height:600px;"}
+  .medium-8.columns
+    .blog-post
+      %h3{style:"margin-bottom:25px;"}
+        Donate Equipment, Technology or Supplies
+
+
+      %p
+        We need veterinary/medical equipment and supplies, new or used, in good-to-excellent working condition. For those supplies that carry an expiration date, please contact us prior to shipping to see if we can accept them.  At this time, we are unable to accept pharmaceuticals of any kind.
+      %p
+        We can also use computer hardware and software, also in good-to-excellent working condition.
+      %p
+        At this time, we are unable to repair any non-working veterinary or computer equipment. Please be sure that all equipment donations are working normally and that they have all parts necessary to use them correctly.
+      %p
+        If you would like to donate published material, it should be in good-to-excellent condition. We accept veterinary textbooks published within the past 10 years (unless it is a “timeless” subject such as anatomy). We currently do not accept journals or non-veterinary texts.
+      %p
+        If you have items you wish to donate, please print and fill out the Project V.E.T.S. Donation Form and include it in your shipment. If you have any questions, contact us at info@projectvets.org. We will get back to you as soon as possible.  For items that may not be listed here, please contact us to determine if we can accept them.  Call us at 303-819-2501 or email us at info@projectvets.org.
+      %p
+        Project V.E.T.S. is an IRS 501(c)(3) public charity, which means that ALL of your donations are tax deductible. This includes the cost of shipping the supplies to our Boulder, Colorado address. Please keep your shipping receipt. A confirmation of your donation will be sent for tax purposes.
+
+      %p
+        %h4
+          Most Needed Items
+        %ul.padd-left
+          %li Autoclaves
+          %li Bandaging supplies
+          %li Binoculars (birding quality)
+          %li Blood chemistry analyzers
+          %li Blood collection tubes
+          %li Blood pressure monitors (canine/feline)
+          %li Centrifuges
+          %li Clippers, blades, nail trimmers
+          %li Collars, e-collars, harnesses, leashes
+          %li Crates
+          %li Darting equipment
+          %li Digital field cameras
+          %li Equipment trays
+          %li
+            %img{:alt => "2", :height => "132", :src => "/assets/2.png", :style => "margin: 6px; float: right;", :width => "200"} Exam gloves
+          %li Freezer (for biological samples) -80 degree
+          %li Gauze (sterile)
+          %li Head lamps
+          %li Hypodermic needles
+          %li Instruments - dental, exam, surgical
+          %li I.V. catheters and administration sets
+          %li Laptops/Computers
+          %li Microscopes
+          %li Muzzles (canine and feline, all sizes)
+          %li N95 particulate masks
+          %li Ophthalmoscopes/otoscopes
+          %li Pee pads
+          %li Pulse oximeters (portable)
+          %li Scale (baby or gram)
+          %li Stethoscopes
+          %li Surgical gloves, masks, gowns
+          %li Suture material (absorbable preferred, expired ok)
+          %li Syringes
+          %li Ultrasounds (portable)
+          %li Vet wrap (coban, co-flex)
+          %li X-ray machines (portable only)
+
+
+  .medium-3.columns.hide-for-small-only{"data-sticky-container" => ""}
+    .sticky{"data-anchor" => "content", "data-sticky" => ""}
+      %ul.accordion{"data-accordion" => "", "data-multi-expand"=>"true"}
+        %li.accordion-item.is-active
+          / The tab title needs role="tab", an href, a unique ID, and aria-controls.
+          %a#panel1d-heading.accordion-title{"aria-controls" => "panel1d", :href => "#panel1d", :role => "tab", style:"font-size:14px;"} How You Can Help
+          / The content pane needs an ID that matches the above href, role="tabpanel", data-tab-content, and aria-labelledby.
+          #panel1d.accordion-content{"aria-labelledby" => "panel1d-heading", "data-tab-content" => "", :role => "tabpanel"}
+            %ul.accord
+              %li
+                %a{:href => "/"}
+                  Monetary Donations
+              %li
+                %a{:href => "/"}
+                  Donate Equipment, Tech, or supplies
+              %li
+                %a{:href => "/"}
+                  Celebrations & memorials
+              %li
+                %a{:href => "/"}
+                  Volunteer
+              %li
+                %a{:href => "/"}
+                  Shop
+
+        %li.accordion-item
+          / The tab title needs role="tab", an href, a unique ID, and aria-controls.
+          %a#panel1d-heading.accordion-title{"aria-controls" => "panel1d", :href => "#panel1d", :role => "tab", style:"font-size:14px;"} Sign up for our e-newsletter
+          / The content pane needs an ID that matches the above href, role="tabpanel", data-tab-content, and aria-labelledby.
+          #panel1d.accordion-content{"aria-labelledby" => "panel1d-heading", "data-tab-content" => "", :role => "tabpanel"}
+            %form
+              %input{:placeholder=>"Name"}
+              %br
+              %input{:placeholder=>"Email"}
+              %br
+              %a.btn.btn-default{:href => "#", :role => "button"} Submit
+
+
+
+
+
+
+
+=render '/shared/footer'

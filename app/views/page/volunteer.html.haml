@@ -1,0 +1,117 @@
+=render '/shared/header'
+
+
+#content.row{style:"background-color:#fff;padding:20px;margin-bottom:20px;min-height:600px;"}
+  .medium-8.columns
+    .blog-post
+      %h3{style:"margin-bottom:25px;"}
+        Volunteer
+
+
+      %p
+        Project V.E.T.S. relies on volunteers to accomplish our mission. If you live in the Boulder, Colorado area and would like to find out how you can help, please contact us at info@projectvets.org.
+      %p
+        Do you live outside of Boulder, but still want to get involved? We also need volunteers to help spread the word about our organization! Hold a fundraiser or visit local veterinarians to ask for their donations. Contact us so that we can work together to help improve animal health and welfare.
+      %p
+        Looking for volunteer opportunities with our Recipient Organizations? Below are links to our recipients that currently have volunteer opportunities. Please contact them directly for more information.
+
+      %p
+        %ul.padd-left
+          %li
+            %a{:href => "http://animalbalance.net/", :target => "_blank"} Animal Balance
+          %li
+            %a{:href => "http://www.apeactionafrica.org/get-involved/are-you-a-vet", :target => "_blank"} Ape Action Africa (a PASA Sanctuary)
+          %li
+            %a{:href => "http://www.awaretrust.org/help-us/volunteer.html", :target => "_blank"} AWARE Trust
+          %li
+            %a{:href => "http://www.belizewildlifeclinic.org/internships/internships/", :target => "_blank"} Belize Wildlife and Referral Clinic
+          %li
+            %a{:href => "http://www.apple.com/startpage/", :target => "_blank"} Chimpanzee Sanctuary Northwest
+          %li
+            %a{:href => "http://dharamsalaanimalrescue.org/?page_id=1306", :target => "_blank"} Dharamsala Animal Rescue
+          %li
+            %a{:href => "http://www.greenwoodwildlife.org/volunteer.php", :target => "_blank"} Greenwood Wildlife Rehabilitation Center
+          %li
+            %a{:href => "http://www.cabarrushumanesociety.org/help/volunteer", :target => "_blank"} Humane Society of Concord
+          %li
+            %a{:href => "http://www.lakesidespayandneutercenter.com/help.html", :target => "_blank"} Lakeside Spay and Neuter
+          %li
+            %a{:href => "http://maziesmission.org/donations/", :target => "_blank"} Mazie’s Mission
+          %li
+            %a{:href => "http://www.mdzananda.co.za/Mdzananda_Animal_Clinic/Pages/volunteer.html", :target => "_blank"} Mdzananda Animal Welfare Clinic
+          %li
+            %a{:href => "http://gorilladoctors.org/orphan-guardianship/53-terms.html", :target => "_blank"} Mountain Gorilla Veterinary Project
+          %li
+            %a{:href => "http://www.ngambaisland.com/index.php?option=com_content&amp;view=article&amp;id=94&amp;Itemid=87", :target => "_blank"} Ngamba Chimpanzee Sanctuary
+          %li
+            %a{:href => "http://pasaprimates.org/help/volunteer/", :target => "_blank"} Pan African Sanctuary Alliance (PASA)
+          %li
+            %a{:href => "http://www.pfafaridabad.com/", :target => "_blank"} People For Animals-Faridabad
+          %li
+            %a{:href => "http://www.soidog.org/en/volunteer/", :target => "_blank"} Soi Dog
+          %li
+            %a{:href => "http://www.souldog.org/volunteer.htm", :target => "_blank"} Soul Dog
+          %li
+            %a{:href => "http://www.taweso.org/news.php", :target => "_blank"} Tanzania Animal Welfare Society
+          %li
+            %a{:href => "http://www.tsunami-animal.org/volunteer_vets.htm", :target => "_blank"} Tsunami Animal-People Alliance
+          %li
+            %a{:href => "http://www.vicfallswildlifetrust.org/VFWT%20Website/Internships.html", :target => "_blank"} Wild Horizons Wildlife Trust
+
+
+        .row
+          .medium-6.columns
+            =image_tag('v1.jpg')
+          .medium-6.columns
+            =image_tag('v2.jpg')
+        .row
+          .medium-6.columns
+            =image_tag('v3.jpg')
+          .medium-6.columns
+            =image_tag('v4.jpg')
+
+
+  .medium-3.columns.hide-for-small-only{"data-sticky-container" => ""}
+    .sticky{"data-anchor" => "content", "data-sticky" => ""}
+      %ul.accordion{"data-accordion" => "", "data-multi-expand"=>"true"}
+        %li.accordion-item.is-active
+          / The tab title needs role="tab", an href, a unique ID, and aria-controls.
+          %a#panel1d-heading.accordion-title{"aria-controls" => "panel1d", :href => "#panel1d", :role => "tab", style:"font-size:14px;"} How You Can Help
+          / The content pane needs an ID that matches the above href, role="tabpanel", data-tab-content, and aria-labelledby.
+          #panel1d.accordion-content{"aria-labelledby" => "panel1d-heading", "data-tab-content" => "", :role => "tabpanel"}
+            %ul.accord
+              %li
+                %a{:href => "/"}
+                  Monetary Donations
+              %li
+                %a{:href => "/"}
+                  Donate Equipment, Tech, or supplies
+              %li
+                %a{:href => "/"}
+                  Celebrations & memorials
+              %li
+                %a{:href => "/"}
+                  Volunteer
+              %li
+                %a{:href => "/"}
+                  Shop
+
+        %li.accordion-item
+          / The tab title needs role="tab", an href, a unique ID, and aria-controls.
+          %a#panel1d-heading.accordion-title{"aria-controls" => "panel1d", :href => "#panel1d", :role => "tab", style:"font-size:14px;"} Sign up for our e-newsletter
+          / The content pane needs an ID that matches the above href, role="tabpanel", data-tab-content, and aria-labelledby.
+          #panel1d.accordion-content{"aria-labelledby" => "panel1d-heading", "data-tab-content" => "", :role => "tabpanel"}
+            %form
+              %input{:placeholder=>"Name"}
+              %br
+              %input{:placeholder=>"Email"}
+              %br
+              %a.btn.btn-default{:href => "#", :role => "button"} Submit
+
+
+
+
+
+
+
+=render '/shared/footer'

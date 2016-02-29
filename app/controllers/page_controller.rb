@@ -33,6 +33,10 @@ class PageController < ApplicationController
   def donate;end
   def gallery;end
   def celebration;end
+  def volunteer;end
+  def equipment;end
+  def assistance;end
+  def by_name;end
 
   def donations
     render :donate
