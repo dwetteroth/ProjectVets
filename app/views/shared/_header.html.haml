@@ -7,7 +7,7 @@
       %ul.menu.dropdown{"data-dropdown-menu"=>true, "data-responsive-menu"=>"drilldown medium-dropdown"}
         %li.menu-text
           %a{:href => "/"}
-            =image_tag("logo")
+            =image_tag("pv-logo")
         %li
           %a{:href => "#"} Who
           %ul.menu
@@ -53,9 +53,9 @@
           %a{:href => "/contact"} Contact
     .top-bar-right
       %ul.menu
-        %li
-          %input{placeholder:"Search...",style:"background: transparent !important;color: #fff;border: 1px solid #ccc;line-height: 30px;margin-top: 14px;"}
+        -# %li
+        -#   %input{placeholder:"Search...",style:"background: transparent !important;color: #fff;border: 1px solid #ccc;line-height: 30px;margin-top: 14px;"}
         %li
           %a{:href => "https://donatenow.networkforgood.org/projectvets?code=website%20donate%20now%20button", :target=>"_blank"}
-            .button
+            .button.large
               Donate

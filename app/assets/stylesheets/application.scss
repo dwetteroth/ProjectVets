@@ -100,10 +100,16 @@ footer {
 
 
 
+
+
  .callout {
      //width:100%;
      &.primary {
        background-image: url('/assets/leopard.jpg');
+       a {
+         color: transparent;
+
+       }
      }
       min-height:530px;
      border: 0px;
