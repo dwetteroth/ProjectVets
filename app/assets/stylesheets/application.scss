@@ -121,7 +121,9 @@ footer {
 
 
  .menu-text {
-   color: #fff; }
+   color: #fff;
+  font-size: 11px;
+ }
 
 
 
@@ -254,6 +256,7 @@ footer {
   background-color: transparent !important;
 }
 footer {
+  margin-top: -20px;
   .callout {
     min-height:0px;
   }
