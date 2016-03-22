@@ -1,5 +1,7 @@
 
 
+
+
 .menu {
   background-color: transparent !important;
   color: #fff ;
@@ -115,6 +117,7 @@ footer {
      //width:100%;
      &.primary {
        background-image: url('/assets/leopard.jpg');
+       margin-top: -20px;
        a {
          color: transparent;
 
@@ -137,6 +140,10 @@ footer {
 
 
 
+
+#content {
+  margin-top:50px;
+}
 
 
 
