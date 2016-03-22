@@ -1,7 +1,7 @@
 
 
 .menu {
-  background-color:transparent !important;
+  background-color: transparent !important;
   color: #fff ;
   a {
     color: #fff !important;
@@ -43,6 +43,15 @@ footer {
   }
 
 
+}
+
+.lower-m {
+  li {
+
+    a {
+      color: #fff !important
+    }
+  }
 }
 
 .fullWidth {
@@ -298,4 +307,23 @@ body {
     margin-top: 5px;
     font-size: 11px;
   }
+}
+
+
+
+.dropdown.menu {
+
+  .submenu {
+    border: 0px solid #000 !important;
+    background-color: rgba(0,0,0,0.9) !important;
+    color: #fff !important;
+  }
+}
+
+.f-dropdown {
+  outline: none !important;
+}
+
+.tabs dd > a, .tabs .tab-title > a{
+    outline: none !important;
 }
