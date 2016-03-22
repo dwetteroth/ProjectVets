@@ -17,7 +17,7 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     :javascript
       var switchTo5x=true;
-    %script{:src => "//w.sharethis.com/button/buttons.js", :type => "text/javascript"}
+    %script{:src => "https://w.sharethis.com/button/buttons.js", :type => "text/javascript"}
     :javascript
       stLight.options({publisher: "4542afba-2f4c-453d-ac8a-b8ebe06a564b", doNotHash: false, doNotCopy: false, hashAddressBar: false});
   %body
@@ -51,6 +51,6 @@
         });
         $('.donor-slider').slick('slickPlay');
         $(document).foundation();
-        
+
       });
     #destroy
