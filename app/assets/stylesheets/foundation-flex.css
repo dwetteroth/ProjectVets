@@ -1825,7 +1825,7 @@ select {
   .callout > :last-child {
     margin-bottom: 0; }
   .callout.primary {
-    background-color: #def0fc; }
+  /*background-color: #def0fc;*/ }
   .callout.secondary {
     background-color: #ebebeb; }
   .callout.success {

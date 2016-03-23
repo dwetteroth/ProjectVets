@@ -116,18 +116,27 @@ footer {
  .callout {
      //width:100%;
      &.primary {
-       background-image: url('/assets/leopard.jpg');
+       background-image: url('/assets/lion-main.jpg');
+       background-size: 100%;
+       background-repeat: no-repeat;
        margin-top: -20px;
+       min-height:500px;
+       height:650px;
        a {
          color: transparent;
 
        }
      }
-      min-height:530px;
+
+
+
      border: 0px;
 
  }
 
+ .callout.primary {
+   background-color: transparent !important;
+ }
 
 
 
