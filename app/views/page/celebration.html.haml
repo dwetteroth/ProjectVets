@@ -1,7 +1,7 @@
 
 
 #content.row{style:"background-color:#fff;padding:20px;margin-bottom:20px;min-height:600px;"}
-  .medium-8.columns
+  .medium-12.columns
     .blog-post
       %h3{style:"margin-bottom:25px;"}
         Celebration
@@ -106,30 +106,30 @@
       %p Alpine Hospital for Animals, Boulder, CO: "Buttercup" Klukvin/Slover, "Callie" Mendes, "Geck" Lears, "Gizzy" Wilson, "Megan" Finley, "Moses" Edwards/Lineberger, "Pomp" Winston, "Rex" Quatrochi, "Roxy" Boaz, "Sweetness" Cardona and "Zen" Imig.
       %p Left Hand Animal Hospital, Niwot, CO: "Aby" Johnsen, "Bailey" Miller, "Benjamin" Richter, "Ellie" Charley, "Ellie" Tilger, "Grizzabella" Rodman, "Marley" Barkhorn, "Mocha" Greweling, "Moses" Edwards/Lineberger, "Porcini" Zeff, "Sequoia" Buck, "Sheldon" Cryts", "Sophie" Ekern, "Summer" Perry and "Tina" Sudduth.
 
-  .medium-3.columns.hide-for-small-only{"data-sticky-container" => ""}
-    .sticky{"data-anchor" => "content", "data-sticky" => ""}
-      %ul.accordion{"data-accordion" => "", "data-multi-expand"=>"true"}
-        %li.accordion-item.is-active
-          / The tab title needs role="tab", an href, a unique ID, and aria-controls.
-          %a#panel1d-heading.accordion-title{"aria-controls" => "panel1d", :href => "#panel1d", :role => "tab", style:"font-size:14px;"} How You Can Help
-          / The content pane needs an ID that matches the above href, role="tabpanel", data-tab-content, and aria-labelledby.
-          #panel1d.accordion-content{"aria-labelledby" => "panel1d-heading", "data-tab-content" => "", :role => "tabpanel"}
-            %ul.accord
-              %li
-                %a{:href => "/"}
-                  Monetary Donations
-              %li
-                %a{:href => "/"}
-                  Donate Equipment, Tech, or supplies
-              %li
-                %a{:href => "/"}
-                  Celebrations & memorials
-              %li
-                %a{:href => "/"}
-                  Volunteer
-              %li
-                %a{:href => "/"}
-                  Shop
+  -# .medium-3.columns.hide-for-small-only{"data-sticky-container" => ""}
+  -#   .sticky{"data-anchor" => "content", "data-sticky" => ""}
+  -#     %ul.accordion{"data-accordion" => "", "data-multi-expand"=>"true"}
+  -#       %li.accordion-item.is-active
+  -#         / The tab title needs role="tab", an href, a unique ID, and aria-controls.
+  -#         %a#panel1d-heading.accordion-title{"aria-controls" => "panel1d", :href => "#panel1d", :role => "tab", style:"font-size:14px;"} How You Can Help
+  -#         / The content pane needs an ID that matches the above href, role="tabpanel", data-tab-content, and aria-labelledby.
+  -#         #panel1d.accordion-content{"aria-labelledby" => "panel1d-heading", "data-tab-content" => "", :role => "tabpanel"}
+  -#           %ul.accord
+  -#             %li
+  -#               %a{:href => "/"}
+  -#                 Monetary Donations
+  -#             %li
+  -#               %a{:href => "/"}
+  -#                 Donate Equipment, Tech, or supplies
+  -#             %li
+  -#               %a{:href => "/"}
+  -#                 Celebrations & memorials
+  -#             %li
+  -#               %a{:href => "/"}
+  -#                 Volunteer
+  -#             %li
+  -#               %a{:href => "/"}
+  -#                 Shop
 
         -# %li.accordion-item
         -#   / The tab title needs role="tab", an href, a unique ID, and aria-controls.
