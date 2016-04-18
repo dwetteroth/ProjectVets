@@ -24,6 +24,10 @@ class PageController < ApplicationController
 
   end
 
+  def newsletter
+    binding.pry
+  end
+
   def contact
 
   end
