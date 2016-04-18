@@ -84,9 +84,10 @@ footer {
 
 
 .doggy {
-  background-image: url(/assets/doggy.jpg);
+  background-color: #9CAA98;
   height:400px;
   background-size: cover;
+  margin: 0 auto;
 
 }
 .doggy-side {
@@ -255,6 +256,9 @@ footer {
 .shim-top {
   &.sm {
     margin-top: 10px;
+  }
+  &.large {
+    margin-top: 30px;
   }
 }
 .main-hp {

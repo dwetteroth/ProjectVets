@@ -17,11 +17,6 @@
 
           .fa.fa-envelope.fa-4{style:"font-size:2rem;"}
     .medium-6.columns
-.row
-
-
-  .small-12.medium-10.large-10.medium-centered.large-centered.columns{style:"text-align:justify;font-weight:500"}
-    %p We are a 501(c)(3) organization dedicated to helping improve the health and welfare of animals around the globe. We achieve this goal by collecting veterinary equipment, technology and supplies (V.E.T.S.) from veterinary hospitals, veterinary colleges, zoological societies, human hospitals and medical equipment/supply manufacturers.
 
 
 .row
@@ -48,11 +43,30 @@
         %a{:href => "#"}
           Learn more
 
+.row
+
+
+  .small-12.medium-10.large-10.medium-centered.large-centered.columns{style:"text-align:justify;font-weight:500"}
+    %p We are a 501(c)(3) organization dedicated to helping improve the health and welfare of animals around the globe. We achieve this goal by collecting veterinary equipment, technology and supplies (V.E.T.S.) from veterinary hospitals, veterinary colleges, zoological societies, human hospitals and medical equipment/supply manufacturers.
 
 
 .row.fullWidth
   .medium-6.columns.doggy
+    .row
+      .medium-2.columns
+        %p
+      .medium-8.columns
+        - r = Random.rand(5)
 
+        =image_tag("spo#{r}", style:"width:100%;margin-top:12%;")
+      .medium-2.columns
+        %p
+    .row
+      .medium-8.columns
+
+      .medium-4.columns.shim-top.large
+        %h4
+          Strategic Partners
   .medium-6.columns.doggy-side
     .medium-12.columns.medium-centered
       %h2
