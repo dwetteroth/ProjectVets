@@ -7,10 +7,12 @@
     .medium-2.columns
       %p
     .medium-4.columns
-      %div.text-center{style:"height:160px;width:350px;background-color: rgba(0,0,0,0.5);color: #fff;padding:15px;padding-top:45px;"}
-        Please join our newsletter!
-        %input{placeholder:"Enter Email",style:"width:80%;border: 1px solid #ccc;line-height: 30px;margin-top: 14px;margin-bottom:5px;background-color:transparent;"}
-        .fa.fa-chevron-right
+      %form{method:"post", action:"/newsletter"}
+        %div.text-center{style:"height:160px;width:350px;background-color: rgba(0,0,0,0.5);color: #fff;padding:15px;padding-top:45px;"}
+          Please join our newsletter!
+          %input{placeholder:"Enter Email",style:"width:80%;border: 1px solid #ccc;line-height: 30px;margin-top: 14px;margin-bottom:5px;background-color:transparent;"}
+
+          .fa.fa-envelope.fa-4
     .medium-6.columns
 .row
 
