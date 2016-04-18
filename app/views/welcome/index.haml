@@ -3,14 +3,27 @@
 .callout.large.primary
   =render '/shared/header'
 
-  .row{style:"margin-top:350px;"}
+  .row{style:"margin-top:300px;"}
     .medium-2.columns
       %p
     .medium-4.columns
+      %p
+
+
       %form{method:"post", action:"/newsletter/signup", id:"newsletter_form"}
         %div.text-center{style:"min-height:160px;width:350px;background-color: rgba(0,0,0,0.5);color: #fff;padding:15px;padding-top:25px;"}
+
+          -if params["notice"].present?
+            .green
+              =params["notice"]
+              %br
+          -elsif params["alert"].present?
+            .red
+              =params["alert"]
+              %br
+
           Please join our newsletter!
-          %input.email_enter{placeholder:"Enter Email",style:"width:100%;border: 1px solid #ccc;line-height: 30px;margin-top: 5px;margin-bottom:5px;background-color:transparent;"}
+          %input.email_enter{placeholder:"Enter Email",style:"width:100%;border: 1px solid #ccc;line-height: 30px;margin-top: 5px;margin-bottom:5px;background-color:transparent;", name:"email"}
           .hide.captcha
             =recaptcha_tags
           %br

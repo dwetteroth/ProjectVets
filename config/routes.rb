@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 	get '/help' => 'page#help'
 	get '/who' => 'page#who'
-	get '/newsletter/signup' => 'page#newsletter'
+	post '/newsletter/signup' => 'page#newsletter'
 	get '/mission' => 'page#mission'
 	get '/history' => 'page#history'
 	get '/board' => 'page#board'

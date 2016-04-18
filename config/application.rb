@@ -22,6 +22,8 @@ module ProjectVets
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    config.action_mailer.delivery_method = :postmark
+    config.action_mailer.postmark_settings = { :api_token => "b722eb87-5d7c-4567-ac96-31034b323332" }
 
     # config.serve_static_assets = true
   end
