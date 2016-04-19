@@ -2,55 +2,48 @@
 
 
 #content.row{style:"background-color:#fff;padding:20px;margin-bottom:20px;min-height:600px;"}
-  .medium-12.columns
+  .medium-2.columns
+    %p
+    %h3{style:"margin-bottom:25px;"}
+      Gallery
+  .medium-8.columns
     .blog-post
-      %h3{style:"margin-bottom:25px;"}
-        Gallery
 
 
-
-
-  -# .medium-3.columns.hide-for-small-only{"data-sticky-container" => ""}
-  -#   .sticky{"data-anchor" => "content", "data-sticky" => ""}
-  -#     %ul.accordion{"data-accordion" => "", "data-multi-expand"=>"true"}
-  -#       %li.accordion-item.is-active
-  -#         / The tab title needs role="tab", an href, a unique ID, and aria-controls.
-  -#         %a#panel1d-heading.accordion-title{"aria-controls" => "panel1d", :href => "#panel1d", :role => "tab", style:"font-size:14px;"} How You Can Help
-  -#         / The content pane needs an ID that matches the above href, role="tabpanel", data-tab-content, and aria-labelledby.
-  -#         #panel1d.accordion-content{"aria-labelledby" => "panel1d-heading", "data-tab-content" => "", :role => "tabpanel"}
-  -#           %ul.accord
-  -#             %li
-  -#               %a{:href => "/"}
-  -#                 Monetary Donations
-  -#             %li
-  -#               %a{:href => "/"}
-  -#                 Donate Equipment, Tech, or supplies
-  -#             %li
-  -#               %a{:href => "/"}
-  -#                 Celebrations & memorials
-  -#             %li
-  -#               %a{:href => "/"}
-  -#                 Volunteer
-  -#             %li
-  -#               %a{:href => "/"}
-  -#                 Shop
-
-        -# %li.accordion-item
-        -#   / The tab title needs role="tab", an href, a unique ID, and aria-controls.
-        -#   %a#panel1d-heading.accordion-title{"aria-controls" => "panel1d", :href => "#panel1d", :role => "tab", style:"font-size:14px;"} Sign up for our e-newsletter
-        -#   / The content pane needs an ID that matches the above href, role="tabpanel", data-tab-content, and aria-labelledby.
-        -#   #panel1d.accordion-content{"aria-labelledby" => "panel1d-heading", "data-tab-content" => "", :role => "tabpanel"}
-        -#     %form
-        -#       %input{:placeholder=>"Name"}
-        -#       %br
-        -#       %input{:placeholder=>"Email"}
-        -#       %br
-        -#       %a.btn.btn-default{:href => "#", :role => "button"} Submit
+      .gallery-content{style:"margin-top:50px;"}
+        %div{}
+          =image_tag('3333', style:"width:700px;")
+        %div{}
+          =image_tag('Rajuii', style:"width:700px;")
+        %div{}
+          =image_tag('GAAPkitten.jpg', style:"width:700px;")
+        %div{}
+          =image_tag('Greenwood.jpg', style:"width:700px;")
+        %div{}
+          =image_tag('WW1.jpg', style:"width:700px;")
+        %div{}
+          =image_tag('10005836_784296028248932_6943040001441776828_o', style:"width:700px;")
+        %div{}
+          =image_tag('slide2-husky.jpg', style:"width:700px;")
+        %div{}
+          =image_tag('MGVPS6131', style:"width:700px;")
+        %div{}
+          =image_tag('Belize.jpg', style:"width:700px;")
+        %div{}
+          =image_tag('AWAHS1.jpg', style:"width:700px;")
+        %div{}
+          =image_tag('Knysna.jpg', style:"width:700px;")
+        %div{}
+          =image_tag('1613957_691420157581872_1671414013750638049_n.jpg', style:"width:700px;")
+        %div{}
+          =image_tag('KAWS-Sylvia', style:"width:700px;")
+        %div{}
+          =image_tag('Mazie', style:"width:700px;")
 
 
 
 
 
-
-
+  .medium-2.columns
+    %p
 =render '/shared/footer'
