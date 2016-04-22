@@ -22,7 +22,7 @@
               =params["alert"]
               %br
           Please join our newsletter!
-          
+
           %input.email_enter{placeholder:"Enter Email",style:"width:100%;border: 1px solid #ccc;line-height: 30px;margin-top: 5px;margin-bottom:5px;background-color:transparent;", name:"email"}
           .hide.captcha
             =recaptcha_tags
@@ -35,6 +35,8 @@
 .row
   .small-12.medium-10.large-10.medium-centered.large-centered.columns
     .medium-4.columns.text-center
+      %h3
+        Donate
       %i.fa.fa-stethoscope.fa-2{style:"font-size:10rem;"}
       .row.columns
         -# %p Project V.E.T.S. is seeking your donations! We need veterinary/medical equipment and supplies, new or used, in good-to-excellent working condition. For those supplies that carry an expiration date, please contact us prior to shipping to see if we can accept them.
@@ -42,6 +44,8 @@
         %a{:href => "#"}
           Learn more
     .medium-4.columns.text-center
+      %h3
+        Distribute
       %i.fa.fa-plane{style:"font-size:10rem;"}
       .row.columns
         -# %p We are an organization dedicated to helping improve the health and welfare of animals around the globe. We achieve this goal by collecting veterinary equipment, technology and supplies (V.E.T.S.) which we then donate to veterinarians worldwide working in animal related non-profits.
@@ -49,7 +53,10 @@
         %a{:href => "#"}
           Learn more
     .medium-4.columns.text-center
-      %i.fa.fa-bar-chart{style:"font-size:10rem;"}
+      %h3
+        Heal
+      -# %i.fa.fa-bar-chart{style:"font-size:10rem;"}
+      =image_tag('bandaid', style:'width:10rem')
       .row.columns
         -# %p We are an organization dedicated to helping improve the health and welfare of animals around the globe. We achieve this goal by collecting veterinary equipment, technology and supplies (V.E.T.S.) which we then donate to veterinarians worldwide working in animal related non-profits.
         %p In 2014, V.E.T.S. donations sent by Project V.E.T.S. assisted in over 89,000 sterilizations and more than 30,100 surgical and internal medicine cases.  Learn more about how your support has helped heal the planet, one animal at a time.
