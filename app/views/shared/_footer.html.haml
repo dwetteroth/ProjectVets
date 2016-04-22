@@ -20,16 +20,16 @@
 
       %ul.menu.vertical
         %li
-          %a{:href => "/mission"} About Us
+          %a{:href => "/mission", style:"color:#2199e8 !important;"} About
         %li
-          %a{:href => "/donations"} Help
+          %a{:href => "/donations", style:"color:#2199e8 !important;"} Help
         %li
-          %a{:href => "/by-name"} Recipients
+          %a{:href => "/by-name", style:"color:#2199e8 !important;"} Recipients
         %li
-          %a{:href => "/contact"} Contact
+          %a{:href => "/contact", style:"color:#2199e8 !important;"} Contact
 
     .small-6.large-3.columns
-      %p.lead Contact
+      -# %p.lead Contact
       %ul.menu.vertical
         .row.small-up-1.medium-up-1.large-up-1
           .column{style:'color:#000;'}
@@ -42,7 +42,7 @@
                 303-819-2501
 
                 %br
-                %a{:href => "mailto:info@projectvets.org"}
+                %a{:href => "mailto:info@projectvets.org", style:"color:#2199e8 !important;"}
                   info@projectvets.org
             =image_tag('spo5')
     .small-6.large-3.columns.hide-for-small-only
@@ -58,16 +58,12 @@
         .medium-12.columns
           %h5
             Shop for Project V.E.T.S.
-          %hr
+
           %p{style:"font-size:11px;"}
             Come and shop for a cause! Each purchase goes toward helping us to collect veterinary supplies and ship them to veterinarians worldwide who are working tirelessly to improve animal health and welfare.
-          .button.large{:onclick=>"document.location='/donate';", style:"float:right;"}
+          .button.large{:onclick=>"document.location='/donate';", style:"float:right;border-radius:3px 3px 3px 3px;"}
             go!
-        -# .medium-1.columns
 
-
-
-    -# .medium-6.columns
 
 
 %script{:src => "https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"}
