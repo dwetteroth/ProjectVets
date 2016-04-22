@@ -363,6 +363,10 @@ footer {
     border: 0px solid #000 !important;
     background-color: rgba(0,0,0,0.5) !important;
     color: #fff !important;
+    font-size: 12px;
+    li {
+      margin-top:-5px;
+    }
   }
 }
 
