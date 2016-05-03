@@ -3,7 +3,7 @@
 .callout.large.primary
   =render '/shared/header'
 
-  .row{style:"margin-top:300px;"}
+  .row.newsletter-hp
     .medium-2.columns
       %p
     .medium-4.columns
@@ -11,7 +11,7 @@
 
 
       %form{method:"post", action:"/newsletter/signup", id:"newsletter_form"}
-        %div.text-center{style:"min-height:160px;width:350px;background-color: rgba(0,0,0,0.5);color: #fff;padding:15px;padding-top:25px;"}
+        %div.main-entry.text-center{style:"min-height:160px;width:350px;background-color: rgba(0,0,0,0.5);color: #fff;padding:15px;padding-top:25px;"}
 
           -if params["notice"].present?
             .green
@@ -98,7 +98,7 @@
     .medium-10.columns.medium-centered
       %p
         For more information about the Project V.E.T.S. Strategic Partner program,
-        %br
+
 
         please contact us at
         %a{:href => "mailto:info@projectvets.org"}
