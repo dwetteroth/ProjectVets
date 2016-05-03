@@ -399,14 +399,15 @@ footer {
     margin-top: -60px;
   }
 }
-
-
 .shim-top {
   &.sm {
     margin-top: 10px;
   }
   &.large {
     margin-top: 30px;
+  }
+  &.xlarge {
+    margin-top: 50px;
   }
 }
 .main-hp {
@@ -560,7 +561,7 @@ footer {
 
 #articlepxfontsize1 {
   p {
-    margin-top: 0px;
+
     font-size: .9rem;
   }
 }
