@@ -1,7 +1,7 @@
 .row
-  .medium-1.large-1.columns
-    &nbsp;
-  .medium-8.large-8.columns
+  -# .medium-1.large-1.columns
+  -#   &nbsp;
+  .medium-10.large-10.columns
     .title-bar{"data-hide-for" => "medium", "data-responsive-toggle" => "main-menu"}
       %button.menu-icon{"data-toggle" => "", :type => "button"}
       .title-bar-title Menu
@@ -10,7 +10,7 @@
         %ul.menu.dropdown{"data-dropdown-menu"=>true, "data-responsive-menu"=>"drilldown medium-dropdown"}
           %li.menu-text
             %a{:href => "/"}
-              =image_tag("top-logo-v4", :style=>"margin-top:20px;")
+              =image_tag("top-logo-v4", :style=>"margin-top:20px;height:90px;")
           %li
             %a{:href => "#"} About
             %ul.menu.lower-m
