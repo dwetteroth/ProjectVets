@@ -1,8 +1,12 @@
+#content.row
+  .medium-12
+    .top-image{style:"background-image:url(/assets/vetI.jpg);height:400px;width:100%;background-size: cover;"}
 
 
 
-#content.row{style:"background-color:#fff;padding:20px;margin-bottom:20px;min-height:600px;"}
-  .medium-8.columns
+
+.row{style:"background-color:#fff;padding:20px;margin-bottom:20px;min-height:600px;margin-top:0px;"}
+  .medium-12.columns
     .blog-post
       %h3{style:"margin-bottom:25px;"}
         Donate Equipment, Technology or Supplies
@@ -30,6 +34,8 @@
           %li Binoculars (birding quality)
           %li Blood chemistry analyzers
           %li Blood collection tubes
+          %li
+            %img{:alt => "2", :height => "332", :src => "/assets/k2.jpg", :style => "margin: 6px; float: right;", :width => "500"} Exam gloves
           %li Blood pressure monitors (canine/feline)
           %li Centrifuges
           %li Clippers, blades, nail trimmers
@@ -38,8 +44,7 @@
           %li Darting equipment
           %li Digital field cameras
           %li Equipment trays
-          %li
-            %img{:alt => "2", :height => "132", :src => "/assets/2.png", :style => "margin: 6px; float: right;", :width => "200"} Exam gloves
+
           %li Freezer (for biological samples) -80 degree
           %li Gauze (sterile)
           %li Head lamps
@@ -63,42 +68,42 @@
           %li X-ray machines (portable only)
 
 
-  .medium-3.columns.hide-for-small-only{"data-sticky-container" => ""}
-    .sticky{"data-anchor" => "content", "data-sticky" => ""}
-      %ul.accordion{"data-accordion" => "", "data-multi-expand"=>"true"}
-        %li.accordion-item.is-active
-          / The tab title needs role="tab", an href, a unique ID, and aria-controls.
-          %a#panel1d-heading.accordion-title{"aria-controls" => "panel1d", :href => "#panel1d", :role => "tab", style:"font-size:14px;"} How You Can Help
-          / The content pane needs an ID that matches the above href, role="tabpanel", data-tab-content, and aria-labelledby.
-          #panel1d.accordion-content{"aria-labelledby" => "panel1d-heading", "data-tab-content" => "", :role => "tabpanel"}
-            %ul.accord
-              %li
-                %a{:href => "/"}
-                  Monetary Donations
-              %li
-                %a{:href => "/"}
-                  Donate Equipment, Tech, or supplies
-              %li
-                %a{:href => "/"}
-                  Celebrations & memorials
-              %li
-                %a{:href => "/"}
-                  Volunteer
-              %li
-                %a{:href => "/"}
-                  Shop
+  -# .medium-3.columns.hide-for-small-only{"data-sticky-container" => ""}
+  -#   .sticky{"data-anchor" => "content", "data-sticky" => ""}
+  -#     %ul.accordion{"data-accordion" => "", "data-multi-expand"=>"true"}
+  -#       %li.accordion-item.is-active
+  -#         / The tab title needs role="tab", an href, a unique ID, and aria-controls.
+  -#         %a#panel1d-heading.accordion-title{"aria-controls" => "panel1d", :href => "#panel1d", :role => "tab", style:"font-size:14px;"} How You Can Help
+  -#         / The content pane needs an ID that matches the above href, role="tabpanel", data-tab-content, and aria-labelledby.
+  -#         #panel1d.accordion-content{"aria-labelledby" => "panel1d-heading", "data-tab-content" => "", :role => "tabpanel"}
+  -#           %ul.accord
+  -#             %li
+  -#               %a{:href => "/"}
+  -#                 Monetary Donations
+  -#             %li
+  -#               %a{:href => "/"}
+  -#                 Donate Equipment, Tech, or supplies
+  -#             %li
+  -#               %a{:href => "/"}
+  -#                 Celebrations & memorials
+  -#             %li
+  -#               %a{:href => "/"}
+  -#                 Volunteer
+  -#             %li
+  -#               %a{:href => "/"}
+  -#                 Shop
 
-        %li.accordion-item
-          / The tab title needs role="tab", an href, a unique ID, and aria-controls.
-          %a#panel1d-heading.accordion-title{"aria-controls" => "panel1d", :href => "#panel1d", :role => "tab", style:"font-size:14px;"} Sign up for our e-newsletter
-          / The content pane needs an ID that matches the above href, role="tabpanel", data-tab-content, and aria-labelledby.
-          #panel1d.accordion-content{"aria-labelledby" => "panel1d-heading", "data-tab-content" => "", :role => "tabpanel"}
-            %form
-              %input{:placeholder=>"Name"}
-              %br
-              %input{:placeholder=>"Email"}
-              %br
-              %a.btn.btn-default{:href => "#", :role => "button"} Submit
+        -# %li.accordion-item
+        -#   / The tab title needs role="tab", an href, a unique ID, and aria-controls.
+        -#   %a#panel1d-heading.accordion-title{"aria-controls" => "panel1d", :href => "#panel1d", :role => "tab", style:"font-size:14px;"} Sign up for our e-newsletter
+        -#   / The content pane needs an ID that matches the above href, role="tabpanel", data-tab-content, and aria-labelledby.
+        -#   #panel1d.accordion-content{"aria-labelledby" => "panel1d-heading", "data-tab-content" => "", :role => "tabpanel"}
+        -#     %form
+        -#       %input{:placeholder=>"Name"}
+        -#       %br
+        -#       %input{:placeholder=>"Email"}
+        -#       %br
+        -#       %a.btn.btn-default{:href => "#", :role => "button"} Submit
 
 
 

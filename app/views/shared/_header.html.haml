@@ -1,61 +1,66 @@
-.medium-8.medium-offset-2
-  .title-bar{"data-hide-for" => "medium", "data-responsive-toggle" => "main-menu"}
-    %button.menu-icon{"data-toggle" => "", :type => "button"}
-    .title-bar-title Menu
-  .top-bar.sticky
-    .top-bar-left
-      %ul.menu.dropdown{"data-dropdown-menu"=>true, "data-responsive-menu"=>"drilldown medium-dropdown"}
-        %li.menu-text
-          %a{:href => "/"}
-            =image_tag("pv-logo")
-        %li
-          %a{:href => "#"} Who
-          %ul.menu.lower-m
-            %li
-              %a{:href => "/mission"} Mission Statement
-            %li
-              %a{:href => "/history"} History
-            %li
-              %a{:href => "/board"} Our Board
-            %li
-              %a{:href => "/staff"} Our Staff
-            %li
-              %a{:href => "/partners"} Strategic Partners
-            %li
-              %a{:href => "/donors"} Our Donors
-            %li
-              %a{:href => "/reports"} Annual Reports
-        %li
-          %a{:href => "#"} Help
-          %ul.menu.lower-m
-            %li
-              %a{:href => "/donations"} Monetary Donations
-            %li
-              %a{:href => "/donate-equipment"} Donate Equipment, Technology, Supplies
-            %li
-              %a{:href => "/celebration"} Celebrations &amp; Memorials
-            %li
-              %a{:href => "/volunteer"} Volunteer
-            -# %li
-            -#   %a{:href => "/shop"} Shop
-        %li
-          %a{:href => "#"} Recipients
-          %ul.menu.lower-m
-            %li
-              %a{:href => "/by-name"} By Name
-            %li
-              %a{:href => "/world-map"} World Map
-            %li
-              %a{:href => "/gallery"} Gallery
-            %li
-              %a{:href => "/assistance"} Apply for Assistance
-        %li
-          %a{:href => "/contact"} Contact
-    .top-bar-right
-      %ul.menu
-        -# %li
-        -#   %input{placeholder:"Search...",style:"background: transparent !important;color: #fff;border: 1px solid #ccc;line-height: 30px;margin-top: 14px;"}
-        %li
-          %a{:href => "https://donatenow.networkforgood.org/projectvets?code=website%20donate%20now%20button", :target=>"_blank"}
-            .button.large
-              Donate
+.row
+  -# .medium-1.large-1.columns
+  -#   &nbsp;
+  .medium-10.large-10.columns
+    .title-bar{"data-hide-for" => "medium", "data-responsive-toggle" => "main-menu"}
+      %button.menu-icon{"data-toggle" => "", :type => "button"}
+      .title-bar-title Menu
+    .top-bar.sticky
+      .top-bar-left
+        %ul.menu.dropdown{"data-dropdown-menu"=>true, "data-responsive-menu"=>"drilldown medium-dropdown"}
+          %li.menu-text
+            %a{:href => "/"}
+              =image_tag("top-logo-v4", :style=>"margin-top:20px;height:90px;")
+          %li
+            %a{:href => "#"} About
+            %ul.menu.lower-m
+              %li
+                %a{:href => "/mission"} Mission Statement
+              %li
+                %a{:href => "/history"} History
+              %li
+                %a{:href => "/board"} Our Board
+              %li
+                %a{:href => "/staff"} Our Staff
+              %li
+                %a{:href => "/partners"} Strategic Partners
+              %li
+                %a{:href => "/donors"} Our Donors
+              %li
+                %a{:href => "/reports"} Annual Reports
+          %li
+            %a{:href => "#"} Help
+            %ul.menu.lower-m
+              %li
+                %a{:href => "/donations"} Monetary Donations
+              %li
+                %a{:href => "/donate-equipment"} Donate Equipment, Technology, Supplies
+              %li
+                %a{:href => "/celebration"} Celebrations &amp; Memorials
+              %li
+                %a{:href => "/volunteer"} Volunteer
+              -# %li
+              -#   %a{:href => "/shop"} Shop
+          %li
+            %a{:href => "#"} Recipients
+            %ul.menu.lower-m
+              -# %li
+              -#   %a{:href => "/by-name"} By Name
+              %li
+                %a{:href => "/world-map"} World Map
+              %li
+                %a{:href => "/gallery"} Gallery
+              %li
+                %a{:href => "/assistance"} Apply for Assistance
+          %li
+            %a{:href => "/contact"} Contact
+      .top-bar-right
+        %ul.menu
+          -# %li
+          -#   %input{placeholder:"Search...",style:"background: transparent !important;color: #fff;border: 1px solid #ccc;line-height: 30px;margin-top: 14px;"}
+          %li
+            %a{:href => "https://donatenow.networkforgood.org/projectvets?code=website%20donate%20now%20button", :target=>"_blank"}
+              .button.large{:style=>"border-radius: 4px 4px 4px 4px"}
+                Donate
+  .medium-2.large-2.columns
+    &nbsp;

@@ -2,7 +2,7 @@
 
 
 #content.row{style:"background-color:#fff;padding:20px;margin-bottom:20px;min-height:600px;"}
-  .medium-8.columns
+  .medium-6.columns
     .blog-post
       %h3{style:"margin-bottom:25px;"}
         Contact Us
@@ -25,125 +25,83 @@
                       %br info@projectvets.org
             .column
               -# %iframe{:allowfullscreen => "", :frameborder => "0", :height => "450", :src => "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3055.694252579282!2d-105.25540788382924!3d40.01527657941364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876beddab8f89bcb%3A0x3b228c3f718eaa02!2s1630+30th+St%2C+Boulder%2C+CO+80303!5e0!3m2!1sen!2sus!4v1453356156416", :style => "border:0;width:130%;"}
-          %p
-          %form#contactFrom{:action => "http://projectvets.org/index.php/contact-us", :method => "post"}
-            .componentheading
-            #rsform_error_4{:style => "display: none;"}
-              %p.formRed Please complete all required fields!
-            %table.formTableLayout{:border => "0"}
-              %tbody
-                %tr.rsform-block.rsform-block-name
-                  %td Name (*)
-                  %td
-                    %input#Name.rsform-input-box{:name => "form[Name]", :size => "20", :type => "text", :value => ""}
-                      .formClr
+  .medium-6.columns
+    %p
+    %form#contactFrom{:action => "http://projectvets.org/index.php/contact-us", :method => "post"}
+      .componentheading
+      #rsform_error_4{:style => "display: none;"}
+        %p.formRed Please complete all required fields!
+      %table.formTableLayout{:border => "0"}
+        %tbody
+          %tr.rsform-block.rsform-block-name
+            %td Name (*)
+            %td
+              %input#Name.rsform-input-box{:name => "form[Name]", :size => "20", :type => "text", :value => ""}
+                .formClr
 
-                  %td
-                %tr.rsform-block.rsform-block-emailaddress
-                  %td Email Address (*)
-                  %td
-                    %input#EmailAddress.rsform-input-box{:name => "form[EmailAddress]", :size => "20", :type => "text", :value => ""}
-                      .formClr
+            %td
+          %tr.rsform-block.rsform-block-emailaddress
+            %td Email Address (*)
+            %td
+              %input#EmailAddress.rsform-input-box{:name => "form[EmailAddress]", :size => "20", :type => "text", :value => ""}
+                .formClr
 
-                  %td
-                %tr.rsform-block.rsform-block-address
-                  %td Address
-                  %td
-                    %input#Address.rsform-input-box{:name => "form[Address]", :size => "20", :type => "text", :value => ""}
-                      .formClr
+            %td
+          %tr.rsform-block.rsform-block-address
+            %td Address
+            %td
+              %input#Address.rsform-input-box{:name => "form[Address]", :size => "20", :type => "text", :value => ""}
+                .formClr
 
-                  %td
-                %tr.rsform-block.rsform-block-city
-                  %td City
-                  %td
-                    %input#City.rsform-input-box{:name => "form[City]", :size => "20", :type => "text", :value => ""}
-                      .formClr
+            %td
+          %tr.rsform-block.rsform-block-city
+            %td City
+            %td
+              %input#City.rsform-input-box{:name => "form[City]", :size => "20", :type => "text", :value => ""}
+                .formClr
 
-                  %td
-                %tr.rsform-block.rsform-block-state
-                  %td State
-                  %td
-                    %input#State.rsform-input-box{:name => "form[State]", :size => "20", :type => "text", :value => ""}
-                      .formClr
+            %td
+          %tr.rsform-block.rsform-block-state
+            %td State
+            %td
+              %input#State.rsform-input-box{:name => "form[State]", :size => "20", :type => "text", :value => ""}
+                .formClr
 
-                  %td
-                %tr.rsform-block.rsform-block-zip
-                  %td Zip
-                  %td
-                    %input#Zip.rsform-input-box{:name => "form[Zip]", :size => "20", :type => "text", :value => ""}
-                      .formClr
+            %td
+          %tr.rsform-block.rsform-block-zip
+            %td Zip
+            %td
+              %input#Zip.rsform-input-box{:name => "form[Zip]", :size => "20", :type => "text", :value => ""}
+                .formClr
 
-                  %td
-                %tr.rsform-block.rsform-block-phone
-                  %td Phone
-                  %td
-                    %input#Phone.rsform-input-box{:name => "form[Phone]", :size => "20", :type => "text", :value => ""}
-                      .formClr
+            %td
+          %tr.rsform-block.rsform-block-phone
+            %td Phone
+            %td
+              %input#Phone.rsform-input-box{:name => "form[Phone]", :size => "20", :type => "text", :value => ""}
+                .formClr
 
-                  %td
-                %tr.rsform-block.rsform-block-information
-                  %td I would like more information on:
-                  %td
-                    %textarea#information.rsform-text-box{:cols => "40", :name => "form[information]", :rows => "5"}
-                    .formClr
+            %td
+          %tr.rsform-block.rsform-block-information
+            %td I would like more information on:
+            %td
+              %textarea#information.rsform-text-box{:cols => "40", :name => "form[information]", :rows => "5"}
+              .formClr
 
-                  %td
-                %tr.rsform-block.rsform-block-captcha
-                  %td Please enter the letters bellow (*)
-                  %td
-                    %img#captcha41{:alt => "Please enter the letters bellow ", :src => "/index.php/component/rsform/?task=captcha&amp;componentId=41&amp;tmpl=component&amp;sid=560383254"}
-                      %br
-                        %input#captchaTxt41.rsform-captcha-box{:name => "form[Captcha]", :style => "text-align:center;width:75px;", :type => "text", :value => ""}
-                          .formClr
+            %td
+          %tr.rsform-block.rsform-block-captcha
+            %td
+            %td
+              =recaptcha_tags
 
-                  %td
-                %tr.rsform-block.rsform-block-signup
-                  %td
-                  %td
-                    %input#SignUp.buttonSubmit.rsform-submit-button{:name => "form[SignUp]", :type => "submit", :value => "Get More Information"}
-                      .formClr
-                  %td
-            %input{:name => "form[formId]", :type => "hidden", :value => "4"}/
-
-
-
-  .medium-3.columns.hide-for-small-only{"data-sticky-container" => ""}
-    .sticky{"data-anchor" => "content", "data-sticky" => ""}
-      %ul.accordion{"data-accordion" => "", "data-multi-expand"=>"true"}
-        %li.accordion-item.is-active
-          / The tab title needs role="tab", an href, a unique ID, and aria-controls.
-          %a#panel1d-heading.accordion-title{"aria-controls" => "panel1d", :href => "#panel1d", :role => "tab", style:"font-size:14px;"} How You Can Help
-          / The content pane needs an ID that matches the above href, role="tabpanel", data-tab-content, and aria-labelledby.
-          #panel1d.accordion-content{"aria-labelledby" => "panel1d-heading", "data-tab-content" => "", :role => "tabpanel"}
-            %ul.accord
-              %li
-                %a{:href => "/"}
-                  Monetary Donations
-              %li
-                %a{:href => "/"}
-                  Donate Equipment, Tech, or supplies
-              %li
-                %a{:href => "/"}
-                  Celebrations & memorials
-              %li
-                %a{:href => "/"}
-                  Volunteer
-              %li
-                %a{:href => "/"}
-                  Shop
-
-        %li.accordion-item
-          / The tab title needs role="tab", an href, a unique ID, and aria-controls.
-          %a#panel1d-heading.accordion-title{"aria-controls" => "panel1d", :href => "#panel1d", :role => "tab", style:"font-size:14px;"} Sign up for our e-newsletter
-          / The content pane needs an ID that matches the above href, role="tabpanel", data-tab-content, and aria-labelledby.
-          #panel1d.accordion-content{"aria-labelledby" => "panel1d-heading", "data-tab-content" => "", :role => "tabpanel"}
-            %form
-              %input{:placeholder=>"Name"}
-              %br
-              %input{:placeholder=>"Email"}
-              %br
-              %a.btn.btn-default{:href => "#", :role => "button"} Submit
-
+            %td
+          %tr.rsform-block.rsform-block-signup
+            %td
+            %td
+              %input#SignUp.buttonSubmit.rsform-submit-button{:name => "form[SignUp]", :type => "submit", :value => "Submit"}
+                .formClr
+            %td
+      %input{:name => "form[formId]", :type => "hidden", :value => "4"}/
 
 
 

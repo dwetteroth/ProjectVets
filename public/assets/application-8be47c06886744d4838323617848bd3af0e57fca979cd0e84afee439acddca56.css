@@ -1,0 +1,314 @@
+/* line 7, /development/vets/app/assets/stylesheets/application.scss */
+.medium-12 img {
+  box-shadow: 4px 4px 4px;
+}
+
+/* line 12, /development/vets/app/assets/stylesheets/application.scss */
+#filtersubmit {
+  position: relative;
+  z-index: 1;
+  left: -25px;
+  top: 1px;
+  color: #7B7B7B;
+  cursor: pointer;
+  width: 0;
+}
+
+/* line 23, /development/vets/app/assets/stylesheets/application.scss */
+.menu {
+  background-color: transparent !important;
+  color: #fff;
+}
+/* line 26, /development/vets/app/assets/stylesheets/application.scss */
+.menu a {
+  color: #fff !important;
+  font-weight: 500;
+}
+
+/* line 32, /development/vets/app/assets/stylesheets/application.scss */
+.padd-left {
+  margin-left: 50px;
+}
+
+/* line 38, /development/vets/app/assets/stylesheets/application.scss */
+.footer-back {
+  background-color: #EBEBEE !important;
+}
+
+/* line 42, /development/vets/app/assets/stylesheets/application.scss */
+.row {
+  margin-top: 20px;
+}
+
+/* line 46, /development/vets/app/assets/stylesheets/application.scss */
+.no-margin {
+  margin: 0px;
+}
+
+/* line 50, /development/vets/app/assets/stylesheets/application.scss */
+footer {
+  background-color: #EBEBEE !important;
+}
+/* line 52, /development/vets/app/assets/stylesheets/application.scss */
+footer li {
+  color: #000 !important;
+}
+/* line 56, /development/vets/app/assets/stylesheets/application.scss */
+footer .menu {
+  background-color: #EBEBEE !important;
+}
+/* line 58, /development/vets/app/assets/stylesheets/application.scss */
+footer .menu a {
+  color: #000 !important;
+}
+
+/* line 71, /development/vets/app/assets/stylesheets/application.scss */
+.lower-m li a {
+  color: #fff !important;
+}
+
+/* line 77, /development/vets/app/assets/stylesheets/application.scss */
+.fullWidth {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: initial;
+}
+
+/* line 84, /development/vets/app/assets/stylesheets/application.scss */
+.green {
+  color: green;
+}
+
+/* line 88, /development/vets/app/assets/stylesheets/application.scss */
+.red {
+  color: red;
+}
+
+/* line 94, /development/vets/app/assets/stylesheets/application.scss */
+.doggy {
+  background-color: #E6E9E5;
+  height: 400px;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+/* line 101, /development/vets/app/assets/stylesheets/application.scss */
+.doggy-side {
+  background-color: #525e4e;
+  height: 400px;
+  color: #fff;
+  font-weight: 300;
+  padding: 90px;
+  padding-top: 100px;
+}
+
+/* line 109, /development/vets/app/assets/stylesheets/application.scss */
+.bottom-hp {
+  background-image: url(/assets/street2.jpg);
+  height: 400px;
+  background-size: cover;
+}
+
+/* line 115, /development/vets/app/assets/stylesheets/application.scss */
+.callout.large {
+  padding: 0rem;
+}
+
+/* line 120, /development/vets/app/assets/stylesheets/application.scss */
+.top-bar-right .button {
+  margin-top: 30px;
+}
+
+/* line 126, /development/vets/app/assets/stylesheets/application.scss */
+.button {
+  background-color: #687819;
+}
+/* line 128, /development/vets/app/assets/stylesheets/application.scss */
+.button.clear {
+  background: transparent;
+  border: 1px solid #fff;
+}
+
+/* line 134, /development/vets/app/assets/stylesheets/application.scss */
+.dropdown.menu .has-submenu.is-down-arrow > a::after {
+  border-color: #687819 transparent transparent;
+}
+
+/* line 143, /development/vets/app/assets/stylesheets/application.scss */
+.callout {
+  border: 0px;
+}
+/* line 145, /development/vets/app/assets/stylesheets/application.scss */
+.callout.primary {
+  background-image: url("/assets/lion-main.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-top: -20px;
+  min-height: 500px;
+  height: 650px;
+}
+/* line 152, /development/vets/app/assets/stylesheets/application.scss */
+.callout.primary a {
+  color: transparent;
+}
+
+/* line 164, /development/vets/app/assets/stylesheets/application.scss */
+.callout.primary {
+  background-color: transparent !important;
+}
+
+/* line 171, /development/vets/app/assets/stylesheets/application.scss */
+.menu-text {
+  color: #fff;
+  font-size: 11px;
+}
+
+/* line 180, /development/vets/app/assets/stylesheets/application.scss */
+#content {
+  margin-top: 50px;
+}
+
+/* line 190, /development/vets/app/assets/stylesheets/application.scss */
+.menu-text {
+  color: #fff;
+}
+
+@media only screen and (max-width: 40em) {
+  /* line 207, /development/vets/app/assets/stylesheets/application.scss */
+  .top-bar {
+    display: none;
+  }
+}
+/* line 242, /development/vets/app/assets/stylesheets/application.scss */
+.max-width {
+  max-width: 100rem !important;
+}
+
+@media (max-aspect-ratio: 16 / 9) {
+  /* line 256, /development/vets/app/assets/stylesheets/application.scss */
+  .fullscreen-bg__video {
+    width: auto;
+    height: 160%;
+    margin-top: -60px;
+  }
+}
+/* line 265, /development/vets/app/assets/stylesheets/application.scss */
+.shim-top.sm {
+  margin-top: 10px;
+}
+/* line 268, /development/vets/app/assets/stylesheets/application.scss */
+.shim-top.large {
+  margin-top: 30px;
+}
+
+/* line 272, /development/vets/app/assets/stylesheets/application.scss */
+.main-hp {
+  height: 350px !important;
+  overflow: hidden;
+}
+/* line 277, /development/vets/app/assets/stylesheets/application.scss */
+.main-hp .callout {
+  min-height: 0px;
+}
+/* line 284, /development/vets/app/assets/stylesheets/application.scss */
+.main-hp .callout p {
+  height: 130px;
+  width: 100%;
+  color: #fff;
+  padding: 30px;
+}
+/* line 291, /development/vets/app/assets/stylesheets/application.scss */
+.main-hp .callout p .title {
+  color: #fff;
+}
+/* line 295, /development/vets/app/assets/stylesheets/application.scss */
+.main-hp .callout p.lead {
+  font-size: 140% !important;
+  border-bottom: 1px solid #000 !important;
+}
+/* line 302, /development/vets/app/assets/stylesheets/application.scss */
+.main-hp .secondary {
+  margin-top: 100px;
+  opacity: .8;
+}
+
+/* line 310, /development/vets/app/assets/stylesheets/application.scss */
+.top-bar {
+  background-color: transparent !important;
+}
+
+/* line 313, /development/vets/app/assets/stylesheets/application.scss */
+footer {
+  margin-top: -20px;
+}
+/* line 315, /development/vets/app/assets/stylesheets/application.scss */
+footer .callout {
+  min-height: 0px;
+}
+
+/* line 326, /development/vets/app/assets/stylesheets/application.scss */
+.callout.newsletter {
+  height: 60px !important;
+  min-height: 0px;
+}
+/* line 330, /development/vets/app/assets/stylesheets/application.scss */
+.callout.donors {
+  min-height: 0px;
+  height: 200px !important;
+}
+
+/* line 337, /development/vets/app/assets/stylesheets/application.scss */
+.shim-top {
+  margin-top: 10px;
+}
+
+/* line 341, /development/vets/app/assets/stylesheets/application.scss */
+.padd-it {
+  margin: 20px;
+}
+
+/* line 345, /development/vets/app/assets/stylesheets/application.scss */
+.center-it {
+  text-align: center;
+}
+
+/* line 350, /development/vets/app/assets/stylesheets/application.scss */
+.accord li {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-size: 11px;
+}
+
+/* line 362, /development/vets/app/assets/stylesheets/application.scss */
+.dropdown.menu .submenu {
+  border: 0px solid #000 !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  color: #fff !important;
+  font-size: 12px;
+}
+/* line 367, /development/vets/app/assets/stylesheets/application.scss */
+.dropdown.menu .submenu li {
+  margin-top: -5px;
+}
+
+/* line 373, /development/vets/app/assets/stylesheets/application.scss */
+.f-dropdown {
+  outline: none !important;
+}
+
+/* line 377, /development/vets/app/assets/stylesheets/application.scss */
+.tabs dd > a, .tabs .tab-title > a {
+  outline: none !important;
+}
+
+/* line 380, /development/vets/app/assets/stylesheets/application.scss */
+:focus {
+  outline: -webkit-focus-ring-color auto 0px;
+}
+
+/* line 384, /development/vets/app/assets/stylesheets/application.scss */
+.is-dropdown-submenu {
+  margin-top: -30px;
+}

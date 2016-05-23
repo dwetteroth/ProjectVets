@@ -7,7 +7,7 @@
             %a{:href => "/"}
               =image_tag("logo", style:"margin-top:-5px;")
           %li
-            %a{:href => "#", style:"color: #fff !important;"} Who
+            %a{:href => "#", style:"color: #fff !important;"} About
             %ul.menu.lower-m
               %li
                 %a{:href => "/mission"} Mission Statement
@@ -39,8 +39,8 @@
           %li
             %a{:href => "#",style:"color: #fff !important;"} Recipients
             %ul.menu.lower-m
-              %li
-                %a{:href => "/by-name"} By Name
+              -# %li
+              -#   %a{:href => "/by-name"} By Name
               %li
                 %a{:href => "/world-map"} World Map
               %li
@@ -55,5 +55,5 @@
           -#   %input{placeholder:"Search...",style:"background: transparent !important;color: #fff;border: 1px solid #ccc;line-height: 30px;margin-top: 14px;"}
           %li
             %a{:href => "https://donatenow.networkforgood.org/projectvets?code=website%20donate%20now%20button", :target=>"_blank"}
-              .button.large{style:"margin-top:5px;"}
+              .button.large{style:"margin-top:5px;border-radius: 4px 4px 4px 4px;"}
                 Donate

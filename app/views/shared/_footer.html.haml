@@ -2,7 +2,7 @@
   .row.expanded.callout.secondary
     .small-6.large-3.columns
       %p
-        %img{src:"/assets/footer_logo.png", style:"width:90%;"}
+        %img{src:"/assets/top-logo-v3.png", style:"width:90%;"}
       %p{style:"text-align: center;"}
         / Go to www.addthis.com/dashboard to customize your tools
         %span.st_sharethis_large{:displayText => "ShareThis"}
@@ -11,71 +11,59 @@
         %span.st_linkedin_large{:displayText => "LinkedIn"}
         %span.st_pinterest_large{:displayText => "Pinterest"}
         %span.st_email_large{:displayText => "Email"}
+      %ul.menu{style:"text-align: center;"}
+        %li.menu-text
+          Project V.E.T.S. Copyright 2016 - All Rights Reserved
 
 
     .small-6.large-3.columns
 
       %ul.menu.vertical
         %li
-          %a{:href => "#"} Home
+          %a{:href => "/mission", style:"color:#2199e8 !important;"} About
         %li
-          %a{:href => "#"} Who we are
+          %a{:href => "/donations", style:"color:#2199e8 !important;"} Help
         %li
-          %a{:href => "#"} How you can help
+          %a{:href => "/by-name", style:"color:#2199e8 !important;"} Recipients
         %li
-          %a{:href => "#"} Our Recipients
-        %li
-          %a{:href => "#"} Contact Us
+          %a{:href => "/contact", style:"color:#2199e8 !important;"} Contact
+
     .small-6.large-3.columns
-      %p.lead Contact
-      %ul.menu.vertical
-        %li
-          303-819-2501
-          %br
-          %br
+      -# %p.lead Contact
+
+      .row.small-up-1.medium-up-1.large-up-1{style:"margin-top:5px;"}
+        .column{style:'color:#000;'}
 
 
-        %li
-          info@projectvets.org
+          1630 A 30th Street, #256
           %br
-          %br
+            Boulder, CO 80301
+            %br
+              303-819-2501
 
-        %li
-          1630A 30th Street, #256
-          %br
-          Boulder, CO 80301
+              %br
+              %a{:href => "mailto:info@projectvets.org", style:"color:#2199e8 !important;"}
+                info@projectvets.org
+          =image_tag('spo5')
     .small-6.large-3.columns.hide-for-small-only
       -# %p.lead Shop
       %ul.menu.vertical
 
         %li
-          %input{placeholder:"Search...",style:"width:95%;border: 1px solid #ccc;line-height: 30px;margin-top: 14px;margin-bottom:5px;"}
-
-
-          .button{style:"float:right;"}
-            Search
+          %input{placeholder:"Search...",style:"width:80%;border: 0px solid #ccc;line-height: 30px;margin-top: 14px;margin-bottom:5px;"}
+          %i.fa.fa-search{id:"filtersubmit"}
 
 
       .row
         .medium-12.columns
-          -# =image_tag("apexx-logo-small-transparent.png")
-          %img{src:"/assets/apexx-logo-small-transparent.png", style:"width:40%;"}
-          %img{src:"/assets/PSI_Logo_Final6_SM.jpg", style:"width:40%;"}
-          %img{src:"/assets/spo6.jpg", style:"width:40%;"}
-          %img{src:"/assets/zoetis.jpg", style:"width:40%;"}
+          %h5
+            Shop for Project V.E.T.S.
 
+          %p{style:"font-size:11px;"}
+            Come and shop for a cause! Each purchase goes toward helping us to collect veterinary supplies and ship them to veterinarians worldwide who are working tirelessly to improve animal health and welfare.
+          .button.large{:onclick=>"document.location='http://www.cafepress.com/projectvets';", style:"float:right;border-radius:3px 3px 3px 3px;"}
+            go!
 
-  .row.footer-back
-    .medium-4.columns
-    .medium-4.columns
-      %ul.menu
-        %li.menu-text
-          Project V.E.T.S. Copyright 2016 - All Rights Reserved
-
-    .medium-4.columns
-
-
-    -# .medium-6.columns
 
 
 %script{:src => "https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"}

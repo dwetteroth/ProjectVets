@@ -11,3 +11,6 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 
 Rails.application.config.assets.precompile += %w( foundation.js )
+
+Rails.application.config.public_key = '6LdPqB0TAAAAAF53S1EVXtiaDyfQ4y67fBP-0peI'
+Rails.application.config.private_key = '6LdPqB0TAAAAAH6Lunsv5rPjI5qE_5K-vhKdJfQz'

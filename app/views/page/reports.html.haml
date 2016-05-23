@@ -1,8 +1,11 @@
+#content.row
+  .medium-12
+    .top-image{style:"background-image:url(/assets/zebras.jpg);height:400px;width:100%;background-size: cover;"}
 
 
 
-#content.row{style:"background-color:#fff;padding:20px;margin-bottom:20px;min-height:600px;"}
-  .medium-8.columns
+.row{style:"background-color:#fff;padding:20px;margin-bottom:20px;min-height:600px;margin-top:0px;"}
+  .medium-12.columns
     .blog-post
       %h3{style:"margin-bottom:25px;"}
         Annual Reports
@@ -12,53 +15,20 @@
 
 
         %p Project V.E.T.S. is pleased to provide links to our Annual Reports. If you have any trouble following the links or accessing the documents, please let us know. We would be happy to send you an electronic or hard copy version. Thank you again to all who have supported Project V.E.T.S....we look forward to working with you again in the future!
-        %h5 Download PDFs
+        
         %ul{style:"margin-left:30px;"}
           %li
-            %a{:href => "/images/2010%20Project%20V.E.T.S.%20Annual%20Report.pdf", :target => "_blank"} 2010 Project V.E.T.S. Annual Report
+            %a{:href => "/assets/2014_report.pdf", :target => "_blank", :title => "2014 Project V.E.T.S. Annual Report"} 2014 Project V.E.T.S. Annual Report
           %li
-            %a{:href => "/images/2011ProjectV.E.T.S.Annual%20Report.pdf", :target => "_blank"} 2011 Project V.E.T.S. Annual Report
+            %a{:href => "/assets/2013%20Project%20V.E.T.S.%20Annual%20Report%20.pdf", :target => "_blank", :title => "2013 Project V.E.T.S. Annual Report"} 2013 Project V.E.T.S. Annual Report
           %li
-            %a{:href => "/images/2012%20PV%20AR.pdf", :target => "_blank", :title => "2012 Project V.E.T.S. Annual Report"} 2012 Project V.E.T.S. Annual Report
+            %a{:href => "/assets/2012%20PV%20AR.pdf", :target => "_blank", :title => "2012 Project V.E.T.S. Annual Report"} 2012 Project V.E.T.S. Annual Report
           %li
-            %a{:href => "/images/2013%20Project%20V.E.T.S.%20Annual%20Report%20.pdf", :target => "_blank", :title => "2013 Project V.E.T.S. Annual Report"} 2013 Project V.E.T.S. Annual Report
+            %a{:href => "/assets/2011ProjectV.E.T.S.Annual%20Report.pdf", :target => "_blank"} 2011 Project V.E.T.S. Annual Report
+          %li
+            %a{:href => "/assets/2010%20Project%20V.E.T.S.%20Annual%20Report.pdf", :target => "_blank"} 2010 Project V.E.T.S. Annual Report
 
-  .medium-3.columns.hide-for-small-only{"data-sticky-container" => ""}
-    .sticky{"data-anchor" => "content", "data-sticky" => ""}
-      %ul.accordion{"data-accordion" => "", "data-multi-expand"=>"true"}
-        %li.accordion-item.is-active
-          / The tab title needs role="tab", an href, a unique ID, and aria-controls.
-          %a#panel1d-heading.accordion-title{"aria-controls" => "panel1d", :href => "#panel1d", :role => "tab", style:"font-size:14px;"} How You Can Help
-          / The content pane needs an ID that matches the above href, role="tabpanel", data-tab-content, and aria-labelledby.
-          #panel1d.accordion-content{"aria-labelledby" => "panel1d-heading", "data-tab-content" => "", :role => "tabpanel"}
-            %ul.accord
-              %li
-                %a{:href => "/"}
-                  Monetary Donations
-              %li
-                %a{:href => "/"}
-                  Donate Equipment, Tech, or supplies
-              %li
-                %a{:href => "/"}
-                  Celebrations & memorials
-              %li
-                %a{:href => "/"}
-                  Volunteer
-              %li
-                %a{:href => "/"}
-                  Shop
 
-        %li.accordion-item
-          / The tab title needs role="tab", an href, a unique ID, and aria-controls.
-          %a#panel1d-heading.accordion-title{"aria-controls" => "panel1d", :href => "#panel1d", :role => "tab", style:"font-size:14px;"} Sign up for our e-newsletter
-          / The content pane needs an ID that matches the above href, role="tabpanel", data-tab-content, and aria-labelledby.
-          #panel1d.accordion-content{"aria-labelledby" => "panel1d-heading", "data-tab-content" => "", :role => "tabpanel"}
-            %form
-              %input{:placeholder=>"Name"}
-              %br
-              %input{:placeholder=>"Email"}
-              %br
-              %a.btn.btn-default{:href => "#", :role => "button"} Submit
 
 
 
