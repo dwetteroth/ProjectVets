@@ -25,6 +25,8 @@ Rails.application.configure do
   # config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
   config.serve_static_assets = true
 
+  config.assets.enabled = true
+
   config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
   config.assets.compile = true
   # Compress JavaScripts and CSS.
