@@ -53,7 +53,23 @@ class PageController < ApplicationController
   def volunteer;end
   def equipment;end
   def assistance;end
-  def by_name;end
+  def by_name
+    require 'csv'
+
+    data_file = Rails.root.join('public',"ttt.csv")
+    arr = []
+    CSV.foreach(data_file, headers: true) do |row|
+      arr<<row.fields[0]
+    end
+    @final=[]
+
+    arr.each do |rt|
+      er = rt.sub("\t",',')
+
+      @final << er.gsub("\t",'')
+    end
+
+  end
 
   def donations
     render :donate
