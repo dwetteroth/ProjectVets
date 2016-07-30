@@ -26,14 +26,24 @@ return new Za.prototype.init(a,b,c,d,e)}m.Tween=Za,Za.prototype={constructor:Za,
 
 $(document).ready(function () {
 
-  $('.gallery-content').slick({
-  dots: true,
-  infinite: true,
-  autoplay: true,
-  speed: 300,
-  slidesToShow: 1,
-  adaptiveHeight: true
-});
+  // $('.gallery-content').slick({
+  // dots: true,
+  // infinite: true,
+  // autoplay: true,
+  // speed: 300,
+  // slidesToShow: 1,
+  // adaptiveHeight: true
+    // });
+  $('.fade').slick({
+    infinite: true,
+    speed: 500,
+    fade: true,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    cssEase: 'linear'
+  });
+
 
   $('.email_enter').on('click', function() {
     $('.captcha').removeClass('hide');
