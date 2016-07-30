@@ -555,10 +555,65 @@ footer {
   }
 }
 
+
+.top-bar-left {
+  @include mq (md) {
+    width: 80%;
+  }
+  @include mq (sm) {
+    width: 80%;
+  }
+  @include mq (xs) {
+    width: 80%;
+  }
+  @include mq (lg) {
+    width: 80%;
+  }
+  @include mq (xl) {
+    width: 80%;
+  }
+  @include mq (jumbo) {
+    width: 90%;
+  }
+}
+
+.top-bar-right {
+  @include mq (md) {
+    width: 20%;
+  }
+  @include mq (sm) {
+    width: 20%;
+  }
+  @include mq (xs) {
+    width: 20%;
+  }
+  @include mq (lg) {
+    width: 20%;
+  }
+  @include mq (xl) {
+    width: 20%;
+  }
+  @include mq (jumbo) {
+    width: 10%;
+  }
+}
+
+
 .top-bar {
   @include mq (md) {
     margin-left: -65px;
+
   }
+
+  @include mq (sm) {
+    height:0px;
+    background-size: 105%;
+  }
+  @include mq (xs) {
+    height:0px;
+    background-size: 125%;
+  }
+
 
 }
 .road-text {
