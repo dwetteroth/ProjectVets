@@ -5,7 +5,7 @@ default: &default
   pool: 5
   host: localhost
   username: dwetteroth
-  # password: ltjmp6
+  password: ltjmp6
 
 development:
   <<: *default
