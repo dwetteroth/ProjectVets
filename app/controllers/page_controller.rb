@@ -30,7 +30,7 @@ class PageController < ApplicationController
     response = JSON.parse rr.body
 
     if(response["success"])
-      NewsletterMailer.marketing_email(params[:email]).deliver
+      NewsletterMailer.marketing_email(params[:email], params[:name]).deliver
 
       flash.keep
       redirect_to controller: 'welcome', action: 'index', notice: "Email Submitted - Thank you"

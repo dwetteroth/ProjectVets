@@ -1,7 +1,7 @@
 .row
   -# .medium-1.large-1.columns
   -#   &nbsp;
-  .medium-10.large-10.columns
+  .small-12.medium-12.large-12.columns
     .title-bar.mobile-view{"data-hide-for" => "medium", "data-responsive-toggle" => "main-menu"}
       %button.menu-icon{"data-toggle" => "", :type => "button"}
       .title-bar-title Menu
@@ -52,6 +52,13 @@
                 %a{:href => "/gallery"} Gallery
               %li
                 %a{:href => "/assistance"} Apply for Assistance
+          %li
+            %a{:href => "#"} Donation Options
+            %ul.menu.lower-m
+              %li
+                %a{:href => "/donate-equipment"} Equipment and Supply
+              %li
+                %a{:href => "/donate-vehicle"} Vehicle Donation
           %li
             %a{:href => "/contact"} Contact
       .top-bar-right

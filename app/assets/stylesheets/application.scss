@@ -563,6 +563,8 @@ footer {
 }
 
 
+
+
 .mobile-view {
 
   @include mq (sm) {
@@ -673,4 +675,17 @@ footer {
   @include mq (xs) {
     min-height: 350px !important;
   }
+}
+
+
+
+.top-bar {
+
+  @include mq (xl) {
+    margin-left: -5%;
+  }
+  @include mq (jumbo) {
+    margin-left: -5%;
+  }
+
 }

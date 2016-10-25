@@ -24,6 +24,9 @@
           Please join our newsletter!
 
           %input.email_enter{placeholder:"Enter Email",style:"width:100%;border: 1px solid #ccc;line-height: 30px;margin-top: 5px;margin-bottom:5px;background-color:transparent;", name:"email"}
+
+          %input.email_enter{placeholder:"Full Name",style:"width:100%;border: 1px solid #ccc;line-height: 30px;margin-top: 5px;margin-bottom:5px;background-color:transparent;", name:"name"}
+
           .hide.captcha{style:"margin-left:20px;"}
             =recaptcha_tags
           %br
@@ -64,7 +67,7 @@
         Learn more
     .medium-4.columns.text-center
       -# %p We are an organization dedicated to helping improve the health and welfare of animals around the globe. We achieve this goal by collecting veterinary equipment, technology and supplies (V.E.T.S.) which we then donate to veterinarians worldwide working in animal related non-profits.
-      %p These V.E.T.S. donations are sent around world, and within the U.S., to 90 non-profits working hands-on with animals.  Animals in distress.  Animals in need of a loving home.  Animals on the brink of extinction.  Animals serving their communities.
+      %p These V.E.T.S. donations are sent around world, and within the U.S., to non-profits working hands-on with animals.  Animals in distress.  Animals in need of a loving home.  Animals on the brink of extinction.  Animals serving their communities.
       %a{:href => "/world-map"}
         Learn more
     .medium-4.columns.text-center
@@ -96,8 +99,8 @@
             =image_tag("outdoor-safety", style:"width:100%;margin-top:10%;")
           %div
             =image_tag("capna", style:"width:90%;margin-top:1%;")
-          %div
-            =image_tag("zoetis", style:"width:80%;margin-top:15%;")
+          -# %div
+          -#   =image_tag("zoetis", style:"width:80%;margin-top:15%;")
         -# - r = Random.rand(5)
         -# -if r==3
         -#   -r=1
