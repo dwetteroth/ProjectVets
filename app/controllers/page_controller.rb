@@ -4,6 +4,10 @@ class PageController < ApplicationController
 
   end
 
+  def vehicle
+
+  end
+
   def who
 
   end

@@ -65,14 +65,20 @@
 
       .row
         .medium-12.columns
-          %h5
-            Shop for Project V.E.T.S.
+          %a.text-center{:href => "http://www.vehiclesforcharity.org/Donate/PVET.html", target:"_blank"}
+            =image_tag('car_donate1', style:'margin-left:90px;')
+            .text-center
+              Donate Your Car
 
-          %p{style:"font-size:11px;"}
-            Come and shop for a cause! Each purchase goes toward helping us to collect veterinary supplies and ship them to veterinarians worldwide who are working tirelessly to improve animal health and welfare.
-          %a{:href => "http://www.cafepress.com/projectvets", target: "_blank"}
-            .button.large{style:"float:right;border-radius:3px 3px 3px 3px;"}
-              go!
+        -# .medium-12.columns
+        -#   %h5
+        -#     Shop for Project V.E.T.S.
+        -#
+        -#   %p{style:"font-size:11px;"}
+        -#     Come and shop for a cause! Each purchase goes toward helping us to collect veterinary supplies and ship them to veterinarians worldwide who are working tirelessly to improve animal health and welfare.
+        -#   %a{:href => "http://www.cafepress.com/projectvets", target: "_blank"}
+        -#     .button.large{style:"float:right;border-radius:3px 3px 3px 3px;"}
+        -#       go!
 
 
 
