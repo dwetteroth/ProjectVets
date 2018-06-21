@@ -21,7 +21,7 @@
             .red
               =params["alert"]
               %br
-          Please join our newsletter!
+          =@hp.newsletter
 
           %input.email_enter{placeholder:"Enter Email",style:"width:100%;border: 1px solid #ccc;line-height: 30px;margin-top: 5px;margin-bottom:5px;background-color:transparent;", name:"email"}
 
@@ -40,21 +40,21 @@
     .medium-4.columns.text-center
 
       %a{:href => "/donate-equipment", style:"color: #000;"}
-        =image_tag('icons/DONATE_gs', :style=>"box-shadow:0px 0px;")
+        =image_tag("#{@hp.donate.url}", :style=>"box-shadow:0px 0px;")
         -# %i.fa.fa-stethoscope.fa-2{style:"font-size:10rem;"}
 
     .medium-4.columns.text-center
 
       %a{:href => "/world-map", style: "color: #000;"}
 
-        =image_tag('icons/DIST_gs', :style=>"box-shadow:0px 0px;height:200px;")
+        =image_tag("#{@hp.distribute.url}", :style=>"box-shadow:0px 0px;height:200px;")
         -# %i.fa.fa-plane{style:"font-size:10rem;"}
 
 
     .medium-4.columns.text-center
       %a{:href => "/assets/ImpactStatement2014-1.pdf", style: "color: #000;", target:"_blank"}
 
-        =image_tag('icons/HEAL_gs', style:'height:130px;box-shadow:0px 0px;')
+        =image_tag("#{@hp.heal.url}", style:'height:130px;box-shadow:0px 0px;')
 
 
 
@@ -62,17 +62,17 @@
   .small-12.medium-12.large-10.medium-centered.large-centered.columns
     .medium-4.columns.text-center
       -# %p Project V.E.T.S. is seeking your donations! We need veterinary/medical equipment and supplies, new or used, in good-to-excellent working condition. For those supplies that carry an expiration date, please contact us prior to shipping to see if we can accept them.
-      %p We accept donations of gently used and new veterinary/medical equipment, technology and supplies (V.E.T.S.).  YOU can make a difference for animals in need by donating these items as well as monetary gifts to help support the cost to ship these items around the world.
+      %p=@hp.donate_text
       %a{:href => "/donate-equipment"}
         Learn more
     .medium-4.columns.text-center
       -# %p We are an organization dedicated to helping improve the health and welfare of animals around the globe. We achieve this goal by collecting veterinary equipment, technology and supplies (V.E.T.S.) which we then donate to veterinarians worldwide working in animal related non-profits.
-      %p These V.E.T.S. donations are sent around world, and within the U.S., to non-profits working hands-on with animals.  Animals in distress.  Animals in need of a loving home.  Animals on the brink of extinction.  Animals serving their communities.
+      %p=@hp.distribute_text
       %a{:href => "/world-map"}
         Learn more
     .medium-4.columns.text-center
       -# %p We are an organization dedicated to helping improve the health and welfare of animals around the globe. We achieve this goal by collecting veterinary equipment, technology and supplies (V.E.T.S.) which we then donate to veterinarians worldwide working in animal related non-profits.
-      %p Each year, supplies and equipment distributed by Project V.E.T.S. assist in thousands of sterilizations, surgical procedures and internal medicine cases.  Learn more about how your donations have helped heal the planet, one animal at a time.
+      %p=@hp.heal_text
       %a{:href => "/assets/ImpactStatement2014-1.pdf", target:"_blank"}
         Learn more
 
@@ -81,24 +81,28 @@
 
 
   .small-12.medium-10.large-10.medium-centered.large-centered.columns{style:"text-align:center;font-weight:500;font-size:20px;"}
-    %p Project V.E.T.S. is a 501(c)(3) organization dedicated to improving the health and welfare of animals around the world.  We achieve this goal by collecting veterinary equipment, technology and supplies (V.E.T.S.) from veterinary hospitals, veterinary colleges, human hospitals, medical equipment and supply manufacturers, other non-profit organizations and individuals.
+    %p=@hp.pv_overview
 
 
 .row.fullWidth
-  .medium-6.columns.doggy
+  .medium-6.columns
     .row
       .medium-2.columns
         %p
       .medium-8.columns
-        .fade
-          %div
-            =image_tag("spo0", style:"width:100%;margin-top:15%;")
-          %div
-            =image_tag("GNP2016", style:"width:80%;margin-top:10%;")
-          %div
-            =image_tag("outdoor-safety", style:"width:100%;margin-top:10%;")
-          %div
-            =image_tag("capna", style:"width:90%;margin-top:1%;")
+        .row.fullWidth
+          -@hp.hp_slideshow.each do |img|
+            .medium-6.columns{style:"height: 200px;"}
+              =image_tag("#{img.url}", style: "width: 200px; ")
+        -# .fade
+        -# %div
+        -#   =image_tag("spo0", style:"width:100%;margin-top:15%;")
+        -# %div
+        -#   =image_tag("GNP2016", style:"width:80%;margin-top:10%;")
+        -# %div
+        -#   =image_tag("outdoor-safety", style:"width:100%;margin-top:10%;")
+        -# %div
+        -#   =image_tag("capna", style:"width:90%;margin-top:1%;")
           -# %div
           -#   =image_tag("zoetis", style:"width:80%;margin-top:15%;")
         -# - r = Random.rand(5)
@@ -119,29 +123,26 @@
   .medium-6.columns.doggy-side
     .medium-12.columns.medium-centered
       %h4
-        Project V.E.T.S. is proud to partner with these corporations and would like to thank them for their commitment to animals and their support of our work.
+        =@hp.slideshow_text
 
     .medium-10.columns.medium-centered
       %p
         For more information about the Project V.E.T.S. Strategic Partner program,
 
 
-        please contact us at
-        %a{:href => "mailto:info@projectvets.org"}
-          info@projectvets.org
-        or 303-819-2501.
+        =raw(@hp.slideshow_sm)
       -# .button.clear
       -#   Learn more about us
 
 .row.fullWidth.no-margin
 
-  .medium-12.columns.text-center.bottom-hp
+  .medium-12.columns.text-center.bottom-hp{style:"background-image:url(#{@hp.bottom_learn_img.url})"}
     .small-12.medium-12.large-12.medium-centered.large-centered.columns{style:"color:#fff;padding-top:50px;"}
 
 
       .medium-12.columns.medium-centered
         %h3.road-text{style:"font-weight:400;"}
-          Check out our Recipient Organizations in the U.S. and around the world
+          =@hp.bottom_learn
         .button.large{:onclick=>"document.location='/by-name';", :style=>"border-radius:3px 3px 3px 3px;"}
           Learn More
 

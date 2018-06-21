@@ -10,9 +10,10 @@
         %ul.menu.dropdown{"data-dropdown-menu"=>true, "data-responsive-menu"=>"drilldown medium-dropdown"}
           %li.menu-text
             %a{:href => "/"}
-              =image_tag("top-logo-v4", :style=>"margin-top:20px;height:90px;")
+              
+              =image_tag("#{ @hp.logo.url}", :style=>"margin-top:20px;height:90px;")
           %li
-            %a{:href => "#"} About
+            %a{:href => "#"}=@hp.menu[0]
             %ul.menu.lower-m
               %li
                 %a{:href => "/mission"} Mission Statement
@@ -29,7 +30,7 @@
               %li
                 %a{:href => "/reports"} Annual Reports
           %li
-            %a{:href => "#"} Help
+            %a{:href => "#"}=@hp.menu[1]
             %ul.menu.lower-m
               %li
                 %a{:href => "/donations"} Monetary Donations
@@ -42,7 +43,7 @@
               -# %li
               -#   %a{:href => "/shop"} Shop
           %li
-            %a{:href => "#"} Recipients
+            %a{:href => "#"}=@hp.menu[2]
             %ul.menu.lower-m
               %li
                 %a{:href => "/by-name"} By Name
@@ -53,7 +54,7 @@
               %li
                 %a{:href => "/assistance"} Apply for Assistance
           %li
-            %a{:href => "#"} Donation Options
+            %a{:href => "#"}=@hp.menu[3]
             %ul.menu.lower-m
               %li
                 %a{:href => "/donations"} Monetary Donations
@@ -62,7 +63,7 @@
               %li
                 %a{:href => "/donate-vehicle"} Vehicle Donation
           %li
-            %a{:href => "/contact"} Contact
+            %a{:href => "/contact"}=@hp.menu[4]
       .top-bar-right
         %ul.menu
           %li
